@@ -300,7 +300,6 @@ class Robot:
         l_sensor2 = self.prox_readings[3]
         l_dist2 = int(l_sensor2["distance"])
 
-        
         if r_dist < 60:
             self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
         elif r_dist1 < 60:
@@ -314,9 +313,7 @@ class Robot:
         elif l_dist2 < 60:
             self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
         elif r_dist == 60 and l_dist == 60:
-            self.set_rotation_and_speed(0, MAX_SPEED * 0.1)
-
-
+            self.set_rotation_and_speed(0, MAX_SPEED * 0)
 
     def draw(self, screen):
         # --- IR proximity sensors ---

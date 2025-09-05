@@ -286,35 +286,24 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
-        # Example: move forward
-        r_sensor = self.prox_readings[0]
-        r_dist = int(r_sensor["distance"])
-        r_sensor1 = self.prox_readings[1]
-        r_dist1 = int(r_sensor1["distance"])
-        r_sensor2 = self.prox_readings[2]
-        r_dist2 = int(r_sensor2["distance"])
-        l_sensor = self.prox_readings[5]
-        l_dist = int(l_sensor["distance"])
-        l_sensor1 = self.prox_readings[4]
-        l_dist1 = int(l_sensor1["distance"])
-        l_sensor2 = self.prox_readings[3]
-        l_dist2 = int(l_sensor2["distance"])
 
-        
-        if r_dist < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif r_dist1 < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif r_dist2 < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif l_dist < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif l_dist1 < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif l_dist2 < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif r_dist == 60 and l_dist == 60:
-            self.set_rotation_and_speed(0, MAX_SPEED * 0.1)
+        # find the strongest signal (i.e. the signal from the robot)
+        if len(self.rab_signals) > 0:
+            ms = self.rab_signals[0]
+            for s in self.rab_signals:
+                if s["intensity"] > ms["intensity"]:
+                    ms = s
+
+            l = np.degrees(ms["bearing"])
+            if 190 < l and l < 350:
+                self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
+            elif 10 < l and l < 170:
+                self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+        else:
+            self.set_rotation_and_speed(0, MAX_SPEED * 0)
+
 
 
 

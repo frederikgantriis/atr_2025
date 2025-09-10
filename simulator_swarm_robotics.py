@@ -3,7 +3,7 @@ import pygame
 
 import logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='dispersion.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='dispersion-noisy.log', encoding='utf-8', level=logging.DEBUG)
 logger.info("Experiment initialized")
 
 # Pygame setup
@@ -51,8 +51,8 @@ LIGHT_NOISE_STD = 0  # noise in perceived light
 ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0  # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.01  # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):

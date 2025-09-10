@@ -1,6 +1,11 @@
 import numpy as np
 import pygame
 
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename='dispersion-random-noisy.log', encoding='utf-8', level=logging.DEBUG)
+logger.info("Experiment initialized")
+
 # Pygame setup
 WIDTH, HEIGHT = 800, 600
 BG_COLOR = (30, 30, 30)
@@ -40,14 +45,14 @@ MAX_TURN = 3
 
 # sensor noise and dropout
 # std dev of directional noise to bearing in RAB:  0.1 rad. = ~5.7 degree in the bearing
-RAB_NOISE_BEARING = 0
-RAB_DROPOUT = 0  # chance to drop a signal
+RAB_NOISE_BEARING = 0.1
+RAB_DROPOUT = 0.1  # chance to drop a signal
 LIGHT_NOISE_STD = 0  # noise in perceived light
-ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
+ORIENTATION_NOISE_STD = 0.1  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0  # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.01  # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):
@@ -286,34 +291,26 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
-        # Example: move forward
-        r_sensor = self.prox_readings[0]
-        r_dist = int(r_sensor["distance"])
-        r_sensor1 = self.prox_readings[1]
-        r_dist1 = int(r_sensor1["distance"])
-        r_sensor2 = self.prox_readings[2]
-        r_dist2 = int(r_sensor2["distance"])
-        l_sensor = self.prox_readings[5]
-        l_dist = int(l_sensor["distance"])
-        l_sensor1 = self.prox_readings[4]
-        l_dist1 = int(l_sensor1["distance"])
-        l_sensor2 = self.prox_readings[3]
-        l_dist2 = int(l_sensor2["distance"])
 
-        if r_dist < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif r_dist1 < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif r_dist2 < 60:
-            self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-        elif l_dist < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif l_dist1 < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif l_dist2 < 60:
-            self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-        elif r_dist == 60 and l_dist == 60:
+        # find the strongest signal (i.e. the signal from the robot)
+        if len(self.rab_signals) > 0:
+            ms = self.rab_signals[0]
+            for s in self.rab_signals:
+                if s["intensity"] > ms["intensity"]:
+                    ms = s
+
+            l = np.degrees(ms["bearing"])
+            if 190 < l and l < 350:
+                self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
+            elif 10 < l and l < 170:
+                self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+        else:
             self.set_rotation_and_speed(0, MAX_SPEED * 0)
+
+
+
 
     def draw(self, screen):
         # --- IR proximity sensors ---
@@ -387,16 +384,29 @@ def logging_init():  # initialize your log file
     pass
 
 
-def log_metrics(frame_count, total_time, metrics):  # write to your log file
-    pass
+def log_metrics(frame_count, total_time, metrics):
+    if frame_count in [1, 100, 1000, 5000]:
+        logger.info(f'frame_count: {frame_count}\ntotal_time: {total_time}\nmetrics: {metrics}')
+    if frame_count == 5000:
+        exit()
 
 
 def logging_close():  # close your log file
     pass
 
 
-def compute_metrics():  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
-    return []
+def compute_metrics(robots):  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+    avg_distance = 0
+    covered_area = 0
+
+    for r1 in robots:
+        sum_d = 0
+        for r2 in robots:
+            if r1.id != r2.id:
+                sum_d += np.linalg.norm(r1._pos - r2._pos)
+        avg_distance += sum_d / (len(robots) - 1)
+    avg_distance = avg_distance / len(robots)
+    return [avg_distance]
 
 
 def main():
@@ -404,7 +414,7 @@ def main():
     dt = SIM_DT
     robots = []
 
-    np.random.seed(42)
+    # np.random.seed(42)
     for i in range(NUM_ROBOTS):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
                                 WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
@@ -443,7 +453,7 @@ def main():
             for robot in robots:
                 robot.move(dt)
 
-            metrics = compute_metrics()
+            metrics = compute_metrics(robots)
             log_metrics(frame_count, total_time, metrics)
 
             frame_count += 1

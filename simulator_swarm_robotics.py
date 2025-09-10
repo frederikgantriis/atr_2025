@@ -3,7 +3,7 @@ import pygame
 
 import logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='dispersion-noisy.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='dispersion-random-noisy.log', encoding='utf-8', level=logging.DEBUG)
 logger.info("Experiment initialized")
 
 # Pygame setup
@@ -45,10 +45,10 @@ MAX_TURN = 3
 
 # sensor noise and dropout
 # std dev of directional noise to bearing in RAB:  0.1 rad. = ~5.7 degree in the bearing
-RAB_NOISE_BEARING = 0
-RAB_DROPOUT = 0  # chance to drop a signal
+RAB_NOISE_BEARING = 0.1
+RAB_DROPOUT = 0.1  # chance to drop a signal
 LIGHT_NOISE_STD = 0  # noise in perceived light
-ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
+ORIENTATION_NOISE_STD = 0.1  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
 MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
@@ -406,7 +406,7 @@ def compute_metrics(robots):  # pass as many arguments as you need and compute r
                 sum_d += np.linalg.norm(r1._pos - r2._pos)
         avg_distance += sum_d / (len(robots) - 1)
     avg_distance = avg_distance / len(robots)
-    return [int(avg_distance)]
+    return [avg_distance]
 
 
 def main():
@@ -414,7 +414,7 @@ def main():
     dt = SIM_DT
     robots = []
 
-    np.random.seed(42)
+    # np.random.seed(42)
     for i in range(NUM_ROBOTS):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
                                 WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])

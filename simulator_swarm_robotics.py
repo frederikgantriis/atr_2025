@@ -1,6 +1,11 @@
 import numpy as np
 import pygame
 
+import logging
+logger = logging.getLogger(__name__)
+logging.basicConfig(filename='dispersion.log', encoding='utf-8', level=logging.DEBUG)
+logger.info("Experiment initialized")
+
 # Pygame setup
 WIDTH, HEIGHT = 800, 600
 BG_COLOR = (30, 30, 30)
@@ -379,16 +384,29 @@ def logging_init():  # initialize your log file
     pass
 
 
-def log_metrics(frame_count, total_time, metrics):  # write to your log file
-    pass
+def log_metrics(frame_count, total_time, metrics):
+    if frame_count in [1, 100, 1000, 5000]:
+        logger.info(f'frame_count: {frame_count}\ntotal_time: {total_time}\nmetrics: {metrics}')
+    if frame_count == 5000:
+        exit()
 
 
 def logging_close():  # close your log file
     pass
 
 
-def compute_metrics():  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
-    return []
+def compute_metrics(robots):  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+    avg_distance = 0
+    covered_area = 0
+
+    for r1 in robots:
+        sum_d = 0
+        for r2 in robots:
+            if r1.id != r2.id:
+                sum_d += np.linalg.norm(r1._pos - r2._pos)
+        avg_distance += sum_d / (len(robots) - 1)
+    avg_distance = avg_distance / len(robots)
+    return [int(avg_distance)]
 
 
 def main():
@@ -435,7 +453,7 @@ def main():
             for robot in robots:
                 robot.move(dt)
 
-            metrics = compute_metrics()
+            metrics = compute_metrics(robots)
             log_metrics(frame_count, total_time, metrics)
 
             frame_count += 1

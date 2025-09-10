@@ -12,7 +12,8 @@ SIM_DT = 1 / 60.0
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
-pygame.display.set_caption("Robots Detecting Each Other and Obstacles with Proximity & RAB")
+pygame.display.set_caption(
+    "Robots Detecting Each Other and Obstacles with Proximity & RAB")
 font = pygame.font.SysFont(None, 20)
 
 # Surrounding walls
@@ -34,21 +35,25 @@ PROX_SENSOR_RANGE = 60  # pixels
 RAB_RANGE = 150  # pixels
 
 MAX_SPEED = 50
-MAX_TURN = 3  # radians/sec - a real robot like the e-puck or TurtleBot typically turns at 90–180 deg/sec (≈ 1.5–3.1 rad/sec)
+# radians/sec - a real robot like the e-puck or TurtleBot typically turns at 90–180 deg/sec (≈ 1.5–3.1 rad/sec)
+MAX_TURN = 3
 
 # sensor noise and dropout
-RAB_NOISE_BEARING = 0 # std dev of directional noise to bearing in RAB:  0.1 rad. = ~5.7 degree in the bearing
+# std dev of directional noise to bearing in RAB:  0.1 rad. = ~5.7 degree in the bearing
+RAB_NOISE_BEARING = 0
 RAB_DROPOUT = 0  # chance to drop a signal
-LIGHT_NOISE_STD = 0 # noise in perceived light
-ORIENTATION_NOISE_STD = 0 # noise in IMU readings of the robot’s own orientation
+LIGHT_NOISE_STD = 0  # noise in perceived light
+ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0 # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0 # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0  # Try 0.01 # Rotational noise in heading (radians)
+
 
 def rotate_vector(vec, angle):
     c, s = np.cos(angle), np.sin(angle)
     return np.array([c*vec[0] - s*vec[1], s*vec[0] + c*vec[1]])
+
 
 class LightSource:
     def __init__(self, pos, intensity=1.0, core_radius=0, decay_radius=200):
@@ -66,8 +71,11 @@ class LightSource:
         return self.intensity * max(0.0, 1.0 - ((dist - self.core_radius) / (self.decay_radius - self.core_radius)) ** 2)
 
 # Utility function to sum light intensity from all sources
+
+
 def _get_light_intensity(pos):
-    raw_intensity = sum(source.get_intensity_at(np.linalg.norm(pos - source.pos)) for source in LIGHT_SOURCES)
+    raw_intensity = sum(source.get_intensity_at(
+        np.linalg.norm(pos - source.pos)) for source in LIGHT_SOURCES)
     noise_factor = np.random.normal(1.0, LIGHT_NOISE_STD)
     return np.clip(raw_intensity * noise_factor, 0.0, 1.0)
 
@@ -78,14 +86,15 @@ class Obstacle:
         self.radius = radius
         self.type = "obstacle"  # used in sensing
 
+
 OBSTACLES = [
-    #Obstacle(pos=(200, 150), radius=20),
-    #Obstacle(pos=(600, 120), radius=30),
+    # Obstacle(pos=(200, 150), radius=20),
+    # Obstacle(pos=(600, 120), radius=30),
 ]
 
 LIGHT_SOURCES = [
-    #LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
-    #LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    # LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
+    # LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
 ]
 
 
@@ -98,24 +107,25 @@ class Robot:
         self._linear_velocity = MAX_SPEED * 0.5
         self._angular_velocity = 0
 
-        #### signal broadcast via RAB (a very short message)
+        # signal broadcast via RAB (a very short message)
         self.broadcast_signal = None
 
-        #### Sensor readings
+        # Sensor readings
         # proximity sensors
-        self.prox_angles = np.pi / NUM_PROX_SENSORS + np.linspace(0, 2 * np.pi, NUM_PROX_SENSORS, endpoint=False)
+        self.prox_angles = np.pi / NUM_PROX_SENSORS + \
+            np.linspace(0, 2 * np.pi, NUM_PROX_SENSORS, endpoint=False)
         self.prox_readings = [
             {"distance": PROX_SENSOR_RANGE, "type": None}
             for _ in range(NUM_PROX_SENSORS)
         ]
         # RAB sensor
-        self.rab_angles = np.pi / NUM_RAB_SENSORS + np.linspace(0, 2 * np.pi, NUM_RAB_SENSORS, endpoint=False)
+        self.rab_angles = np.pi / NUM_RAB_SENSORS + \
+            np.linspace(0, 2 * np.pi, NUM_RAB_SENSORS, endpoint=False)
         self.rab_signals = []
         # light sensor
         self.light_intensity = 0.0
         # IMU (Inertial Measurement Unit) sensor providing robot's orientation
         self.orientation = 0.0
-
 
     def move(self, dt):
         # Update heading
@@ -131,9 +141,10 @@ class Robot:
         self._pos += np.array([dx, dy])
 
         # Arena bounds clipping
-        self._pos[0] = np.clip(self._pos[0], self._radius, WIDTH - self._radius)
-        self._pos[1] = np.clip(self._pos[1], self._radius, HEIGHT - self._radius)
-
+        self._pos[0] = np.clip(
+            self._pos[0], self._radius, WIDTH - self._radius)
+        self._pos[1] = np.clip(
+            self._pos[1], self._radius, HEIGHT - self._radius)
 
     def compute_distance_to_wall(self, direction, bounds, max_range):
         x, y = self._pos
@@ -154,7 +165,7 @@ class Robot:
             if t > 0:
                 distances.append(t)
         wall_distance = min(distances) if distances else max_range
-        wall_distance = max(wall_distance,0)
+        wall_distance = max(wall_distance, 0)
         return min(wall_distance, max_range)
 
     def read_sensors(self, robots, obstacles, arena_bounds):
@@ -175,11 +186,12 @@ class Robot:
                 continue
 
             rel_vec = other._pos - self._pos
-            distance = max(0,np.linalg.norm(rel_vec) - other._radius)
+            distance = max(0, np.linalg.norm(rel_vec) - other._radius)
             if distance > max(PROX_SENSOR_RANGE, RAB_RANGE):
                 continue
 
-            bearing = (np.arctan2(rel_vec[1], rel_vec[0]) - self._heading) % (2 * np.pi)
+            bearing = (np.arctan2(
+                rel_vec[1], rel_vec[0]) - self._heading) % (2 * np.pi)
 
             # Communication (RAB)
             if distance <= RAB_RANGE:
@@ -188,14 +200,15 @@ class Robot:
 
                 if np.random.rand() > dropout_probability:
                     # adding noise (directional error) to bearing
-                    bearing = (bearing + np.random.normal(0, RAB_NOISE_BEARING)) % (2 * np.pi)
+                    bearing = (bearing + np.random.normal(0,
+                               RAB_NOISE_BEARING)) % (2 * np.pi)
 
                     rab_idx = int((bearing / (2 * np.pi)) * NUM_RAB_SENSORS)
 
                     self.rab_signals.append({
-                        'message': {'heading': other.orientation, 'comm_signal':other.broadcast_signal},
+                        'message': {'heading': other.orientation, 'comm_signal': other.broadcast_signal},
                         'distance': distance,
-                        'bearing': self.rab_angles[rab_idx], # local
+                        'bearing': self.rab_angles[rab_idx],  # local
                         'sensor_idx': rab_idx,
                         'intensity': 1 / ((distance / RAB_RANGE) ** 2 + 1),
                     })
@@ -204,29 +217,33 @@ class Robot:
             if distance <= PROX_SENSOR_RANGE:
                 prox_idx = int((bearing / (2 * np.pi)) * NUM_PROX_SENSORS)
                 if distance < self.prox_readings[prox_idx]["distance"]:
-                    self.prox_readings[prox_idx] = {"distance": distance, "type": "robot"}
+                    self.prox_readings[prox_idx] = {
+                        "distance": distance, "type": "robot"}
 
         # Detect obstacles
         for obs in obstacles:
             rel_vec = obs.pos - self._pos
-            distance = max(0,np.linalg.norm(rel_vec) - obs.radius)
+            distance = max(0, np.linalg.norm(rel_vec) - obs.radius)
             if distance <= PROX_SENSOR_RANGE:
-                bearing = (np.arctan2(rel_vec[1], rel_vec[0]) - self._heading) % (2 * np.pi)
+                bearing = (np.arctan2(
+                    rel_vec[1], rel_vec[0]) - self._heading) % (2 * np.pi)
                 prox_idx = int((bearing / (2 * np.pi)) * NUM_PROX_SENSORS)
                 if distance < self.prox_readings[prox_idx]["distance"]:
-                    self.prox_readings[prox_idx] = {"distance": distance, "type": "obstacle"}
+                    self.prox_readings[prox_idx] = {
+                        "distance": distance, "type": "obstacle"}
 
         # Wall sensing (raycast style)
         for i, angle in enumerate(self.prox_angles):
             global_angle = (self._heading + angle) % (2 * np.pi)
             direction = np.array([np.cos(global_angle), np.sin(global_angle)])
-            wall_dist = self.compute_distance_to_wall(direction, arena_bounds, PROX_SENSOR_RANGE)
-            if wall_dist <self.prox_readings[i]["distance"]:
+            wall_dist = self.compute_distance_to_wall(
+                direction, arena_bounds, PROX_SENSOR_RANGE)
+            if wall_dist < self.prox_readings[i]["distance"]:
                 self.prox_readings[i] = {"distance": wall_dist, "type": "wall"}
 
         # Read IMU for own orientation
-        self.orientation = (self._heading + np.random.normal(0, ORIENTATION_NOISE_STD)) % (2 * np.pi)
-
+        self.orientation = (
+            self._heading + np.random.normal(0, ORIENTATION_NOISE_STD)) % (2 * np.pi)
 
     def _set_velocity(self, linear, angular):
         # Internal use only. Use set_rotation_and_speed instead
@@ -256,7 +273,8 @@ class Robot:
         angular_velocity = np.clip(kp * angle_diff, -MAX_TURN, MAX_TURN)
         target_speed = np.clip(target_speed, 0, MAX_SPEED)
         # Slow down when turning sharply
-        linear_velocity = target_speed * (1 - min(abs(angle_diff) / np.pi, 1)) * 0.9 + 0.1
+        linear_velocity = target_speed * \
+            (1 - min(abs(angle_diff) / np.pi, 1)) * 0.9 + 0.1
         self._set_velocity(linear_velocity, angular_velocity)
 
     def controller_init(self):
@@ -314,38 +332,50 @@ class Robot:
             pygame.draw.line(screen, color, start, end, 2)
 
         # --- Robot body ---
-        pygame.draw.circle(screen, ROBOT_COLOR, self._pos.astype(int), self._radius)
+        pygame.draw.circle(screen, ROBOT_COLOR,
+                           self._pos.astype(int), self._radius)
 
         # --- Heading indicator ---
-        heading_vec = rotate_vector(np.array([self._radius + 2, 0]), self._heading)
-        pygame.draw.line(screen, ROBOT_COLOR, self._pos, self._pos + heading_vec, 3)
+        heading_vec = rotate_vector(
+            np.array([self._radius + 2, 0]), self._heading)
+        pygame.draw.line(screen, ROBOT_COLOR, self._pos,
+                         self._pos + heading_vec, 3)
+
 
 def draw_obstacles(screen):
     for obs in OBSTACLES:
-        pygame.draw.circle(screen, (120, 120, 120), obs.pos.astype(int), obs.radius)
+        pygame.draw.circle(screen, (120, 120, 120),
+                           obs.pos.astype(int), obs.radius)
+
 
 def draw_light_sources(screen):
     for light in LIGHT_SOURCES:
         # Draw fading light circle
         for r in range(light.decay_radius, light.core_radius, -10):
-            alpha = int(255 *light.get_intensity_at(r))
+            alpha = int(255 * light.get_intensity_at(r))
             surface = pygame.Surface((r * 2, r * 2), pygame.SRCALPHA)
-            pygame.draw.circle(surface, (light.intensity*255, light.intensity*235, 0, alpha), (r, r), r)
+            pygame.draw.circle(surface, (light.intensity*255,
+                               light.intensity*235, 0, alpha), (r, r), r)
             screen.blit(surface, (light.pos[0] - r, light.pos[1] - r))
 
         # Draw core of the light
-        pygame.draw.circle(screen, (light.intensity*255, light.intensity*255, 0), light.pos.astype(int), max(5,light.core_radius))
+        pygame.draw.circle(screen, (light.intensity*255, light.intensity*255, 0),
+                           light.pos.astype(int), max(5, light.core_radius))
 
-def logging_init(): #initialize your log file
+
+def logging_init():  # initialize your log file
     pass
 
-def log_metrics(frame_count, total_time, metrics): # write to your log file
+
+def log_metrics(frame_count, total_time, metrics):  # write to your log file
     pass
 
-def logging_close(): # close your log file
+
+def logging_close():  # close your log file
     pass
 
-def compute_metrics(): # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+
+def compute_metrics():  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
     return []
 
 
@@ -356,7 +386,8 @@ def main():
 
     np.random.seed(42)
     for i in range(NUM_ROBOTS):
-        pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
+        pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
+                                WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
         heading = np.random.uniform(0, 2 * np.pi)
         robots.append(Robot(i, pos, heading))
 
@@ -381,8 +412,8 @@ def main():
                     print("Paused" if paused else "Resumed")
                 elif event.key == pygame.K_SPACE:
                     visualize = not visualize
-                    print("Visualization", "enabled" if visualize else "disabled", "at", total_time)
-
+                    print(
+                        "Visualization", "enabled" if visualize else "disabled", "at", total_time)
 
         if not paused:
             total_time += dt  # accumulate time
@@ -414,11 +445,12 @@ def main():
             pygame.display.flip()
             pygame.display.set_caption("Robot Sim — VISUAL MODE")
         else:
-            pygame.display.set_caption("Robot Sim — PAUSED in HEADLESS" if paused else "Robot Sim — HEADLESS")
-
+            pygame.display.set_caption(
+                "Robot Sim — PAUSED in HEADLESS" if paused else "Robot Sim — HEADLESS")
 
     pygame.quit()
     logging_close()
+
 
 if __name__ == "__main__":
     main()

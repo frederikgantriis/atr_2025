@@ -25,7 +25,7 @@ ARENA_BOUNDS = {
 }
 
 # Parameters
-NUM_ROBOTS = 2
+NUM_ROBOTS = 60
 ROBOT_RADIUS = 10
 
 NUM_PROX_SENSORS = 6
@@ -46,8 +46,8 @@ LIGHT_NOISE_STD = 0  # noise in perceived light
 ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0  # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.01  # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):
@@ -280,6 +280,9 @@ class Robot:
     def controller_init(self):
         pass
 
+    def angle_diff(self, b):
+        return ((b - self.orientation + 180) % 360) - 180
+
     def robot_controller(self):
         """
             Implement your control logic here.
@@ -292,8 +295,41 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
-        # Example: move forward
-        self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+
+        speed_amount = 0.2
+        rotation = 0
+
+        for signal in self.rab_signals:
+            closest_signal = signal
+            if signal["intensity"] > closest_signal["intensity"]:
+                closest_signal = signal
+
+            orientation = np.degrees(closest_signal["bearing"])
+            if closest_signal["intensity"] > 0.6:
+                # Separation
+                if 190 < orientation and orientation < 350:
+                    self.set_rotation_and_speed(90, MAX_SPEED * speed_amount)
+                elif 10 < orientation and orientation < 170:
+                    self.set_rotation_and_speed(-90, MAX_SPEED * speed_amount)
+                else:
+                    self.set_rotation_and_speed(0, MAX_SPEED * speed_amount)
+            else:
+                # Cohesion
+                self.set_rotation_and_speed(
+                    self.angle_diff(signal["message"]["heading"]), MAX_SPEED * 0.9)
+
+                # if 190 < orientation and orientation < 350:
+                # self.set_rotation_and_speed(-90, MAX_SPEED * speed_amount)
+                # elif 10 < orientation and orientation < 170:
+                # self.set_rotation_and_speed(90, MAX_SPEED * speed_amount)
+                # else:
+                # self.set_rotation_and_speed(180, MAX_SPEED * speed_amount)
+
+            rotation = rotation % 360
+            if rotation > 180:
+                rotation = -(rotation % 180)
+
+            # Alignment
 
     def draw(self, screen):
         # --- IR proximity sensors ---
@@ -387,7 +423,7 @@ def main():
     np.random.seed(42)
     for i in range(NUM_ROBOTS):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
-                                WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
+            WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
         heading = np.random.uniform(0, 2 * np.pi)
         robots.append(Robot(i, pos, heading))
 

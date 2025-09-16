@@ -3,7 +3,8 @@ import pygame
 
 import logging
 logger = logging.getLogger(__name__)
-logging.basicConfig(filename='dispersion-random-noisy.log', encoding='utf-8', level=logging.DEBUG)
+logging.basicConfig(filename='dispersion-random-noisy.log',
+                    encoding='utf-8', level=logging.DEBUG)
 logger.info("Experiment initialized")
 
 # Pygame setup
@@ -309,9 +310,6 @@ class Robot:
         else:
             self.set_rotation_and_speed(0, MAX_SPEED * 0)
 
-
-
-
     def draw(self, screen):
         # --- IR proximity sensors ---
         for i, reading in enumerate(self.prox_readings):
@@ -386,7 +384,8 @@ def logging_init():  # initialize your log file
 
 def log_metrics(frame_count, total_time, metrics):
     if frame_count in [1, 100, 1000, 5000]:
-        logger.info(f'frame_count: {frame_count}\ntotal_time: {total_time}\nmetrics: {metrics}')
+        logger.info(f'frame_count: {frame_count}\ntotal_time: {
+                    total_time}\nmetrics: {metrics}')
     if frame_count == 5000:
         exit()
 
@@ -395,7 +394,8 @@ def logging_close():  # close your log file
     pass
 
 
-def compute_metrics(robots):  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+# pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+def compute_metrics(robots):
     avg_distance = 0
     covered_area = 0
 

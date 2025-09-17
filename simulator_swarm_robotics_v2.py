@@ -296,20 +296,16 @@ class Robot:
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
 
-        avoid_speed = 1
-        align_speed = 1
+        wall_avoidance_speed = 1
+        flocking_speed = 1
         w_avoid = 1
-        w_align = 0.45
+        w_align = 1
         w_coh = 0.1
-        avoid_rad = 0
-        align_rad = 0
-        coh_rad = 0
-        rad = 0
 
         # Average prox angle
         wall_angles = []
         for i in range(len(self.prox_readings)):
-            if self.prox_readings[i]['type'] == 'wall':
+            if self.prox_readings[i]['type'] == 'wall' and self.prox_readings[i]['distance'] < 50:
                 wall_angles.append(self.prox_angles[i])
 
         headings = []
@@ -330,7 +326,7 @@ class Robot:
             wall_vx = np.cos(wall_angles).mean()
             wall_vy = np.sin(wall_angles).mean()
             # immediately steer away from walls
-            self.set_rotation_and_speed(np.arctan2(-wall_vy, -wall_vx), MAX_SPEED * avoid_speed)
+            self.set_rotation_and_speed(np.arctan2(-wall_vy, -wall_vx), MAX_SPEED * wall_avoidance_speed)
         else:
             if len(close_headings) > 0:
                 avoid_vx = np.cos(close_headings).mean()
@@ -354,7 +350,7 @@ class Robot:
                 x = np.average(np.cos(all_rads), weights=group_weights)
                 y = np.average(np.sin(all_rads), weights=group_weights)
                 rad = np.arctan2(y, x)
-                self.set_rotation_and_speed(rad, MAX_SPEED * align_speed)
+                self.set_rotation_and_speed(rad, MAX_SPEED * flocking_speed)
             else:
                 self.set_rotation_and_speed(0, MAX_SPEED * 1)
 

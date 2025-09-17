@@ -1,5 +1,5 @@
-import pygame
 import numpy as np
+import pygame
 
 # Pygame setup
 WIDTH, HEIGHT = 800, 600
@@ -25,7 +25,7 @@ ARENA_BOUNDS = {
 }
 
 # Parameters
-NUM_ROBOTS = 60
+NUM_ROBOTS = 10
 ROBOT_RADIUS = 10
 
 NUM_PROX_SENSORS = 6
@@ -46,8 +46,8 @@ LIGHT_NOISE_STD = 0  # noise in perceived light
 ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0.01  # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.0  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.0 # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):
@@ -296,40 +296,71 @@ class Robot:
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
 
-        speed_amount = 0.2
+        avoid_speed = 1
+        align_speed = 1
         rotation = 0
+        w_avoid = 0.5
+        w_align = 1
+        w_coh = 0.1
+        avoid_rad = 0
+        align_rad = 0
+        coh_rad = 0
+        rad = 0
 
+        # Average prox angle
+        wall_angles = []
+        for i in range(len(self.prox_readings)):
+            if self.prox_readings[i]['type'] == 'wall':
+                wall_angles.append(self.prox_angles[i])
+
+        headings = []
+        close_headings = []
+        headings_to_others = []
+        all_rads = []
+        group_weights = []
         for signal in self.rab_signals:
-            closest_signal = signal
-            if signal["intensity"] > closest_signal["intensity"]:
-                closest_signal = signal
-
-            orientation = np.degrees(closest_signal["bearing"])
-            if closest_signal["intensity"] > 0.6:
-                # Separation
-                if 190 < orientation and orientation < 350:
-                    self.set_rotation_and_speed(90, MAX_SPEED * speed_amount)
-                elif 10 < orientation and orientation < 170:
-                    self.set_rotation_and_speed(-90, MAX_SPEED * speed_amount)
-                else:
-                    self.set_rotation_and_speed(0, MAX_SPEED * speed_amount)
+            if signal['distance'] < 30:
+                close_headings.append(signal['bearing'])
             else:
-                # Cohesion
-                self.set_rotation_and_speed(
-                    self.angle_diff(signal["message"]["heading"]), MAX_SPEED * 0.9)
+                headings.append(signal['message']['heading'])
+                headings_to_others.append(signal['bearing'])
+        
+        if len(wall_angles) > 0:
+            wall_vx = np.cos(wall_angles).mean()
+            wall_vy = np.sin(wall_angles).mean()
+            # immediately steer away from walls
+            self.set_rotation_and_speed(np.arctan2(-wall_vy, -wall_vx), MAX_SPEED * avoid_speed)
+        else:
+            if len(close_headings) > 0:
+                avoid_vx = np.cos(close_headings).mean()
+                avoid_vy = np.sin(close_headings).mean()
+                avoid_rad = np.arctan2(-avoid_vy, -avoid_vx)
+                all_rads.append(avoid_rad)
+                group_weights.append(w_avoid)
+            if len(headings) > 0:
+                align_vx = np.cos(headings).mean()
+                align_vy = np.sin(headings).mean()
+                align_rad = np.arctan2(align_vy, align_vx)
+                all_rads.append(align_rad)
+                group_weights.append(w_align)
+            if len(headings_to_others) > 0:
+                coh_x = np.cos(headings_to_others).mean()
+                coh_y = np.sin(headings_to_others).mean()
+                coh_rad = np.arctan2(coh_y, coh_x)
+                all_rads.append(coh_rad)
+                group_weights.append(w_coh)
+            if len(all_rads) > 0:
+                x = np.average(np.cos(all_rads), weights=group_weights)
+                y = np.average(np.sin(all_rads), weights=group_weights)
+                rad = np.arctan2(y, x)
+                self.set_rotation_and_speed(self.get_relative_heading(rad), MAX_SPEED * align_speed)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 1)
 
-                # if 190 < orientation and orientation < 350:
-                # self.set_rotation_and_speed(-90, MAX_SPEED * speed_amount)
-                # elif 10 < orientation and orientation < 170:
-                # self.set_rotation_and_speed(90, MAX_SPEED * speed_amount)
-                # else:
-                # self.set_rotation_and_speed(180, MAX_SPEED * speed_amount)
 
-            rotation = rotation % 360
-            if rotation > 180:
-                rotation = -(rotation % 180)
 
-            # Alignment
+
+
 
     def draw(self, screen):
         # --- IR proximity sensors ---

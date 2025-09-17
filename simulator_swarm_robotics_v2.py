@@ -298,9 +298,8 @@ class Robot:
 
         avoid_speed = 1
         align_speed = 1
-        rotation = 0
-        w_avoid = 0.5
-        w_align = 1
+        w_avoid = 1
+        w_align = 0.45
         w_coh = 0.1
         avoid_rad = 0
         align_rad = 0
@@ -319,8 +318,10 @@ class Robot:
         all_rads = []
         group_weights = []
         for signal in self.rab_signals:
-            if signal['distance'] < 30:
+            if signal['distance'] < 50:
                 close_headings.append(signal['bearing'])
+                headings.append(signal['message']['heading'])
+                headings_to_others.append(signal['bearing'])
             else:
                 headings.append(signal['message']['heading'])
                 headings_to_others.append(signal['bearing'])
@@ -341,7 +342,7 @@ class Robot:
                 align_vx = np.cos(headings).mean()
                 align_vy = np.sin(headings).mean()
                 align_rad = np.arctan2(align_vy, align_vx)
-                all_rads.append(align_rad)
+                all_rads.append(self.get_relative_heading(align_rad))
                 group_weights.append(w_align)
             if len(headings_to_others) > 0:
                 coh_x = np.cos(headings_to_others).mean()
@@ -353,7 +354,7 @@ class Robot:
                 x = np.average(np.cos(all_rads), weights=group_weights)
                 y = np.average(np.sin(all_rads), weights=group_weights)
                 rad = np.arctan2(y, x)
-                self.set_rotation_and_speed(self.get_relative_heading(rad), MAX_SPEED * align_speed)
+                self.set_rotation_and_speed(rad, MAX_SPEED * align_speed)
             else:
                 self.set_rotation_and_speed(0, MAX_SPEED * 1)
 

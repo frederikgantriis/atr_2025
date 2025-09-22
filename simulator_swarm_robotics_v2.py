@@ -1,5 +1,7 @@
-import pygame
+from sys import argv
+
 import numpy as np
+import pygame
 
 # Pygame setup
 WIDTH, HEIGHT = 800, 600
@@ -8,7 +10,7 @@ ROBOT_COLOR = (200, 255, 255)
 OBSTACLE_COLOR = (200, 50, 50)
 FONT_COLOR = (255, 255, 255)
 
-SIM_DT = 1 / 60.0
+SIM_DT = 10 / 60.0
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -25,7 +27,7 @@ ARENA_BOUNDS = {
 }
 
 # Parameters
-NUM_ROBOTS = 2
+NUM_ROBOTS = 20
 ROBOT_RADIUS = 10
 
 NUM_PROX_SENSORS = 6
@@ -46,8 +48,8 @@ LIGHT_NOISE_STD = 0  # noise in perceived light
 ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0  # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.01 # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):
@@ -280,6 +282,86 @@ class Robot:
     def controller_init(self):
         pass
 
+    def angle_diff(self, b):
+        return ((b - self.orientation + 180) % 360) - 180
+
+    def flock_controls(self):
+        wall_avoidance_speed = 1
+        flocking_speed = 1
+        w_avoid = 0.8
+        w_align = 1
+        w_coh = 0.1
+
+        # Average prox angle
+        wall_angles = []
+        for i in range(len(self.prox_readings)):
+            if self.prox_readings[i]['type'] == 'wall' and self.prox_readings[i]['distance'] < 50:
+                wall_angles.append(self.prox_angles[i])
+
+        headings = []
+        close_headings = []
+        headings_to_others = []
+        all_rads = []
+        group_weights = []
+        for signal in self.rab_signals:
+            if signal['distance'] < 50:
+                close_headings.append(signal['bearing'])
+                headings.append(signal['message']['heading'])
+                headings_to_others.append(signal['bearing'])
+            else:
+                headings.append(signal['message']['heading'])
+                headings_to_others.append(signal['bearing'])
+        
+        if len(wall_angles) > 0:
+            wall_vx = np.cos(wall_angles).mean()
+            wall_vy = np.sin(wall_angles).mean()
+            # immediately steer away from walls
+            self.set_rotation_and_speed(np.arctan2(-wall_vy, -wall_vx), MAX_SPEED * wall_avoidance_speed)
+        else:
+            if len(close_headings) > 0:
+                avoid_vx = np.cos(close_headings).mean()
+                avoid_vy = np.sin(close_headings).mean()
+                avoid_rad = np.arctan2(-avoid_vy, -avoid_vx)
+                all_rads.append(avoid_rad)
+                group_weights.append(w_avoid)
+            if len(headings) > 0:
+                align_vx = np.cos(headings).mean()
+                align_vy = np.sin(headings).mean()
+                align_rad = np.arctan2(align_vy, align_vx)
+                all_rads.append(self.get_relative_heading(align_rad))
+                group_weights.append(w_align)
+            if len(headings_to_others) > 0:
+                coh_x = np.cos(headings_to_others).mean()
+                coh_y = np.sin(headings_to_others).mean()
+                coh_rad = np.arctan2(coh_y, coh_x)
+                all_rads.append(coh_rad)
+                group_weights.append(w_coh)
+            if len(all_rads) > 0:
+                x = np.average(np.cos(all_rads), weights=group_weights)
+                y = np.average(np.sin(all_rads), weights=group_weights)
+                rad = np.arctan2(y, x)
+                self.set_rotation_and_speed(rad, MAX_SPEED * flocking_speed)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 1)
+
+    def disperse_controls(self):
+        # find the strongest signal (i.e. the signal from the robot)
+        if len(self.rab_signals) > 0:
+            ms = self.rab_signals[0]
+            for s in self.rab_signals:
+                if s["intensity"] > ms["intensity"]:
+                    ms = s
+
+            l = np.degrees(ms["bearing"])
+            if 190 < l and l < 350:
+                self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
+            elif 10 < l and l < 170:
+                self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+        else:
+            self.set_rotation_and_speed(0, MAX_SPEED * 0)
+
     def robot_controller(self):
         """
             Implement your control logic here.
@@ -292,8 +374,19 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
-        # Example: move forward
-        self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+        match control_method:
+            case 'flock':
+                self.flock_controls()
+            case 'disperse':
+                self.disperse_controls()
+            case _:
+                self.flock_controls()
+
+
+
+
+
+
 
     def draw(self, screen):
         # --- IR proximity sensors ---
@@ -380,6 +473,17 @@ def compute_metrics():  # pass as many arguments as you need and compute relevan
 
 
 def main():
+    global control_method
+    control_method = 'flock' # default control method
+    valid_methods = ['flock', 'disperse']
+    try:
+        if argv[1] in valid_methods:
+            control_method = argv[1]
+        else:
+            print(f'unknown control method, defaulting to: {control_method}...')
+    except IndexError:
+        print(f"no control method set, defaulting to: {control_method}...")
+
     clock = pygame.time.Clock()
     dt = SIM_DT
     robots = []
@@ -387,7 +491,7 @@ def main():
     np.random.seed(42)
     for i in range(NUM_ROBOTS):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
-                                WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
+            WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
         heading = np.random.uniform(0, 2 * np.pi)
         robots.append(Robot(i, pos, heading))
 

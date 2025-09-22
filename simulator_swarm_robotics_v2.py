@@ -1,3 +1,5 @@
+from sys import argv
+
 import numpy as np
 import pygame
 
@@ -283,22 +285,10 @@ class Robot:
     def angle_diff(self, b):
         return ((b - self.orientation + 180) % 360) - 180
 
-    def robot_controller(self):
-        """
-            Implement your control logic here.
-            You can access:
-            - self.rab_signals: list of received messages from other robots
-            - self.prox_readings: proximity sensor data
-            - self.light_intensity: light at current location
-
-            Use only self.set_rotation_and_speed(...) to move the robot.
-
-            DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
-            """
-
+    def flock_controls(self):
         wall_avoidance_speed = 1
         flocking_speed = 1
-        w_avoid = 1
+        w_avoid = 0.8
         w_align = 1
         w_coh = 0.1
 
@@ -353,6 +343,45 @@ class Robot:
                 self.set_rotation_and_speed(rad, MAX_SPEED * flocking_speed)
             else:
                 self.set_rotation_and_speed(0, MAX_SPEED * 1)
+
+    def disperse_controls(self):
+        # find the strongest signal (i.e. the signal from the robot)
+        if len(self.rab_signals) > 0:
+            ms = self.rab_signals[0]
+            for s in self.rab_signals:
+                if s["intensity"] > ms["intensity"]:
+                    ms = s
+
+            l = np.degrees(ms["bearing"])
+            if 190 < l and l < 350:
+                self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
+            elif 10 < l and l < 170:
+                self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
+        else:
+            self.set_rotation_and_speed(0, MAX_SPEED * 0)
+
+    def robot_controller(self):
+        """
+            Implement your control logic here.
+            You can access:
+            - self.rab_signals: list of received messages from other robots
+            - self.prox_readings: proximity sensor data
+            - self.light_intensity: light at current location
+
+            Use only self.set_rotation_and_speed(...) to move the robot.
+
+            DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
+            """
+        match control_method:
+            case 'flock':
+                self.flock_controls()
+            case 'disperse':
+                self.disperse_controls()
+            case _:
+                self.flock_controls()
+
 
 
 
@@ -444,6 +473,17 @@ def compute_metrics():  # pass as many arguments as you need and compute relevan
 
 
 def main():
+    global control_method
+    control_method = 'flock' # default control method
+    valid_methods = ['flock', 'disperse']
+    try:
+        if argv[1] in valid_methods:
+            control_method = argv[1]
+        else:
+            print(f'unknown control method, defaulting to: {control_method}...')
+    except IndexError:
+        print(f"no control method set, defaulting to: {control_method}...")
+
     clock = pygame.time.Clock()
     dt = SIM_DT
     robots = []

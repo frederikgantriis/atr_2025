@@ -10,7 +10,7 @@ ROBOT_COLOR = (200, 255, 255)
 OBSTACLE_COLOR = (200, 50, 50)
 FONT_COLOR = (255, 255, 255)
 
-SIM_DT = 1 / 60.0
+SIM_DT = 10 / 60.0
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -27,7 +27,7 @@ ARENA_BOUNDS = {
 }
 
 # Parameters
-NUM_ROBOTS = 10
+NUM_ROBOTS = 20
 ROBOT_RADIUS = 10
 
 NUM_PROX_SENSORS = 6
@@ -48,8 +48,8 @@ LIGHT_NOISE_STD = 0  # noise in perceived light
 ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientation
 
 # noise in the motion model (simulates actuation/motor errors)
-MOTION_NOISE_STD = 0.0  # Try 0.5   # Positional noise in dx/dy (pixels)
-HEADING_NOISE_STD = 0.0 # Try 0.01 # Rotational noise in heading (radians)
+MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
+HEADING_NOISE_STD = 0.01 # Try 0.01 # Rotational noise in heading (radians)
 
 
 def rotate_vector(vec, angle):

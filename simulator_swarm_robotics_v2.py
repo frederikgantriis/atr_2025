@@ -51,7 +51,6 @@ ORIENTATION_NOISE_STD = 0  # noise in IMU readings of the robot’s own orientat
 MOTION_NOISE_STD = 0.5  # Try 0.5   # Positional noise in dx/dy (pixels)
 HEADING_NOISE_STD = 0.01 # Try 0.01 # Rotational noise in heading (radians)
 
-
 def rotate_vector(vec, angle):
     c, s = np.cos(angle), np.sin(angle)
     return np.array([c*vec[0] - s*vec[1], s*vec[0] + c*vec[1]])
@@ -95,8 +94,9 @@ OBSTACLES = [
 ]
 
 LIGHT_SOURCES = [
-    LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
-    LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    # LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
+    # LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    LightSource(pos=(np.random.randint(0, WIDTH), np.random.randint(HEIGHT)), intensity=1, core_radius=10, decay_radius=70)
 ]
 
 
@@ -285,59 +285,6 @@ class Robot:
     def angle_diff(self, b):
         return ((b - self.orientation + 180) % 360) - 180
 
-    def get_mean_direction(self, bearings, opposite=False, ws=None):
-        if not bearings:
-            return None
-
-        x, y = np.average(np.cos(bearings), weights=ws), np.average(np.sin(bearings), weights=ws)
-        if opposite:
-            return np.arctan2(-y, -x)
-        return np.arctan2(y, x)
-
-    def flock_controls(self):
-        # weights for avoid, align, cohesion
-        w_avoid = 0.8
-        w_align = 1
-        w_cohesion = 0.1
-        w_light_cohesion = 0.8
-        speed = 1
-
-        # trigger distance for avoidance behaviours
-        min_flock_dist = 50
-
-        flock_headings = [s['message']['heading'] for s in self.rab_signals]
-        signal_bearings = [s['bearing'] for s in self.rab_signals]
-        avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
-        if self.light_intensity > 0.0:
-            w_cohesion = w_light_cohesion
-            speed = 0.8
-
-        # calculate all relevant behaviour directions (is None if not relevant)
-        avoid_dir = self.get_mean_direction(avoid_signal_bearings, opposite=True)
-        align_dir = self.get_mean_direction(flock_headings)
-        align_dir = self.get_relative_heading(align_dir) if align_dir is not None else align_dir
-        cohesion_dir = self.get_mean_direction(signal_bearings)
-
-        # combine all relevant directions with weights
-        weights = [w_avoid, w_align, w_cohesion]
-        control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir] if x is not None]
-        new_direction = self.get_mean_direction(control_dirs, ws=weights[:len(control_dirs)])
-
-        # set new direction
-        if new_direction is not None:
-            self.set_rotation_and_speed(new_direction, MAX_SPEED * speed)
-        else:
-            self.set_rotation_and_speed(0, MAX_SPEED * speed)
-
-    def disperse_controls(self):
-        signal_bearings = [s['bearing'] for s in self.rab_signals]
-        if not signal_bearings:
-            self.set_rotation_and_speed(0, MAX_SPEED * 1)
-            return
-
-        x, y = np.mean(np.cos(signal_bearings)), np.mean(np.sin(signal_bearings))
-        opposite_vector = np.arctan2(-y, -x)
-        self.set_rotation_and_speed(opposite_vector, MAX_SPEED)
 
     def robot_controller(self):
         """
@@ -351,22 +298,75 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
-        min_wall_dist = 50
+        def get_mean_direction(bearings, opposite=False, ws=None):
+            if not bearings:
+                return None
+
+            x, y = np.average(np.cos(bearings), weights=ws), np.average(np.sin(bearings), weights=ws)
+            if opposite:
+                return np.arctan2(-y, -x)
+            return np.arctan2(y, x)
+
+        def flock_controls():
+            # weights for avoid, align, cohesion
+            w_avoid = 0.8
+            w_align = 1
+            w_cohesion = 0.1
+            w_light_cohesion = 0.8
+            speed = 1
+
+            # trigger distance for avoidance behaviours
+            min_flock_dist = 50
+
+            flock_headings = [s['message']['heading'] for s in self.rab_signals]
+            signal_bearings = [s['bearing'] for s in self.rab_signals]
+            avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
+            if self.light_intensity > 0.0:
+                w_cohesion = w_light_cohesion
+                speed = 0.8
+
+            # calculate all relevant behaviour directions (is None if not relevant)
+            avoid_dir = get_mean_direction(avoid_signal_bearings, opposite=True)
+            align_dir = get_mean_direction(flock_headings)
+            align_dir = self.get_relative_heading(align_dir) if align_dir is not None else align_dir
+            cohesion_dir = get_mean_direction(signal_bearings)
+
+            # combine all relevant directions with weights
+            weights = [w_avoid, w_align, w_cohesion]
+            control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir] if x is not None]
+            new_direction = get_mean_direction(control_dirs, ws=weights[:len(control_dirs)])
+
+            # set new direction
+            if new_direction is not None:
+                self.set_rotation_and_speed(new_direction, MAX_SPEED * speed)
+            else:
+                self.set_rotation_and_speed(0, MAX_SPEED * speed)
+
+        def disperse_controls():
+            signal_bearings = [s['bearing'] for s in self.rab_signals]
+            if not signal_bearings:
+                self.set_rotation_and_speed(0, MAX_SPEED * 1)
+                return
+
+            x, y = np.mean(np.cos(signal_bearings)), np.mean(np.sin(signal_bearings))
+            opposite_vector = np.arctan2(-y, -x)
+            self.set_rotation_and_speed(opposite_vector, MAX_SPEED)
 
         # if close to any walls, immediatly steer away and return
+        min_wall_dist = 50
         wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and (r['type'] == 'wall' or r['type'] == 'obstacle') ]
         if wall_bearings:
-            opposite_wall_vector = self.get_mean_direction(wall_bearings, opposite=True)
+            opposite_wall_vector = get_mean_direction(wall_bearings, opposite=True)
             self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
             return
 
         match control_method:
             case 'flock':
-                self.flock_controls()
+                flock_controls()
             case 'disperse':
-                self.disperse_controls()
+                disperse_controls()
             case _:
-                self.flock_controls()
+                flock_controls()
 
 
 

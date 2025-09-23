@@ -345,22 +345,14 @@ class Robot:
                 self.set_rotation_and_speed(0, MAX_SPEED * 1)
 
     def disperse_controls(self):
-        # find the strongest signal (i.e. the signal from the robot)
-        if len(self.rab_signals) > 0:
-            ms = self.rab_signals[0]
-            for s in self.rab_signals:
-                if s["intensity"] > ms["intensity"]:
-                    ms = s
+        signal_bearings = [s['bearing'] for s in self.rab_signals]
+        if not signal_bearings:
+            self.set_rotation_and_speed(0, 0)
+            return
 
-            l = np.degrees(ms["bearing"])
-            if 190 < l and l < 350:
-                self.set_rotation_and_speed(90, MAX_SPEED * 0.5)
-            elif 10 < l and l < 170:
-                self.set_rotation_and_speed(-90, MAX_SPEED * 0.5)
-            else:
-                self.set_rotation_and_speed(0, MAX_SPEED * 0.5)
-        else:
-            self.set_rotation_and_speed(0, MAX_SPEED * 0)
+        x, y = np.mean(np.cos(signal_bearings)), np.mean(np.sin(signal_bearings))
+        opposite_vector = np.arctan2(-y, -x)
+        self.set_rotation_and_speed(opposite_vector, MAX_SPEED)
 
     def robot_controller(self):
         """

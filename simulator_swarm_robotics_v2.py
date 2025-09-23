@@ -285,64 +285,50 @@ class Robot:
     def angle_diff(self, b):
         return ((b - self.orientation + 180) % 360) - 180
 
+    def get_mean_direction(self, bearings, opposite=False, ws=None):
+        if not bearings:
+            return None
+
+        x, y = np.average(np.cos(bearings), weights=ws), np.average(np.sin(bearings), weights=ws)
+        if opposite:
+            return np.arctan2(-y, -x)
+        return np.arctan2(y, x)
+
     def flock_controls(self):
-        wall_avoidance_speed = 1
-        flocking_speed = 1
-        w_avoid = 0.8
-        w_align = 1
-        w_coh = 0.1
+        # weights for [avoid, align, cohesion]
+        weights = [0.8, 1, 0.1]
 
-        # Average prox angle
-        wall_angles = []
-        for i in range(len(self.prox_readings)):
-            if self.prox_readings[i]['type'] == 'wall' and self.prox_readings[i]['distance'] < 50:
-                wall_angles.append(self.prox_angles[i])
+        # trigger distances for avoidance behaviours
+        min_wall_dist = 50
+        min_flock_dist = 50
 
-        headings = []
-        close_headings = []
-        headings_to_others = []
-        all_rads = []
-        group_weights = []
-        for signal in self.rab_signals:
-            if signal['distance'] < 50:
-                close_headings.append(signal['bearing'])
-                headings.append(signal['message']['heading'])
-                headings_to_others.append(signal['bearing'])
-            else:
-                headings.append(signal['message']['heading'])
-                headings_to_others.append(signal['bearing'])
-        
-        if len(wall_angles) > 0:
-            wall_vx = np.cos(wall_angles).mean()
-            wall_vy = np.sin(wall_angles).mean()
-            # immediately steer away from walls
-            self.set_rotation_and_speed(np.arctan2(-wall_vy, -wall_vx), MAX_SPEED * wall_avoidance_speed)
+        # lists of all relevant signal info
+        wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and r['type'] == 'wall']
+        flock_headings = [s['message']['heading'] for s in self.rab_signals]
+        signal_bearings = [s['bearing'] for s in self.rab_signals]
+        avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
+
+        # if close to any walls, immediatly steer away and return
+        if wall_bearings:
+            opposite_wall_vector = self.get_mean_direction(wall_bearings, opposite=True)
+            self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
+            return
+            
+        # calculate all relevant behaviour directions (is None if not relevant)
+        avoid_dir = self.get_mean_direction(avoid_signal_bearings, opposite=True)
+        align_dir = self.get_mean_direction(flock_headings)
+        align_dir = self.get_relative_heading(align_dir) if align_dir is not None else align_dir
+        cohesion_dir = self.get_mean_direction(signal_bearings)
+
+        # combine all relevant directions with weights
+        control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir] if x is not None]
+        new_direction = self.get_mean_direction(control_dirs, ws=weights[:len(control_dirs)])
+
+        # set new direction
+        if new_direction is not None:
+            self.set_rotation_and_speed(new_direction, MAX_SPEED)
         else:
-            if len(close_headings) > 0:
-                avoid_vx = np.cos(close_headings).mean()
-                avoid_vy = np.sin(close_headings).mean()
-                avoid_rad = np.arctan2(-avoid_vy, -avoid_vx)
-                all_rads.append(avoid_rad)
-                group_weights.append(w_avoid)
-            if len(headings) > 0:
-                align_vx = np.cos(headings).mean()
-                align_vy = np.sin(headings).mean()
-                align_rad = np.arctan2(align_vy, align_vx)
-                all_rads.append(self.get_relative_heading(align_rad))
-                group_weights.append(w_align)
-            if len(headings_to_others) > 0:
-                coh_x = np.cos(headings_to_others).mean()
-                coh_y = np.sin(headings_to_others).mean()
-                coh_rad = np.arctan2(coh_y, coh_x)
-                all_rads.append(coh_rad)
-                group_weights.append(w_coh)
-            if len(all_rads) > 0:
-                x = np.average(np.cos(all_rads), weights=group_weights)
-                y = np.average(np.sin(all_rads), weights=group_weights)
-                rad = np.arctan2(y, x)
-                self.set_rotation_and_speed(rad, MAX_SPEED * flocking_speed)
-            else:
-                self.set_rotation_and_speed(0, MAX_SPEED * 1)
+            self.set_rotation_and_speed(0, MAX_SPEED)
 
     def disperse_controls(self):
         signal_bearings = [s['bearing'] for s in self.rab_signals]
@@ -480,7 +466,7 @@ def main():
     dt = SIM_DT
     robots = []
 
-    np.random.seed(42)
+    # np.random.seed(42)
     for i in range(NUM_ROBOTS):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
             WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])

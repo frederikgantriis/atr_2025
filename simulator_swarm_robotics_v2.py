@@ -4,7 +4,7 @@ import numpy as np
 import pygame
 
 # Pygame setup
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 1400, 1000
 BG_COLOR = (30, 30, 30)
 ROBOT_COLOR = (200, 255, 255)
 OBSTACLE_COLOR = (200, 50, 50)
@@ -90,13 +90,13 @@ class Obstacle:
 
 
 OBSTACLES = [
-    # Obstacle(pos=(200, 150), radius=20),
-    # Obstacle(pos=(600, 120), radius=30),
+    Obstacle(pos=(200, 150), radius=20),
+    Obstacle(pos=(600, 120), radius=30),
 ]
 
 LIGHT_SOURCES = [
-    # LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
-    # LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
+    LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
 ]
 
 
@@ -295,25 +295,23 @@ class Robot:
         return np.arctan2(y, x)
 
     def flock_controls(self):
-        # weights for [avoid, align, cohesion]
-        weights = [0.8, 1, 0.1]
+        # weights for avoid, align, cohesion
+        w_avoid = 0.8
+        w_align = 1
+        w_cohesion = 0.1
+        w_light_cohesion = 0.8
+        speed = 1
 
-        # trigger distances for avoidance behaviours
-        min_wall_dist = 50
+        # trigger distance for avoidance behaviours
         min_flock_dist = 50
 
-        # lists of all relevant signal info
-        wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and r['type'] == 'wall']
         flock_headings = [s['message']['heading'] for s in self.rab_signals]
         signal_bearings = [s['bearing'] for s in self.rab_signals]
         avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
+        if self.light_intensity > 0.0:
+            w_cohesion = w_light_cohesion
+            speed = 0.4
 
-        # if close to any walls, immediatly steer away and return
-        if wall_bearings:
-            opposite_wall_vector = self.get_mean_direction(wall_bearings, opposite=True)
-            self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
-            return
-            
         # calculate all relevant behaviour directions (is None if not relevant)
         avoid_dir = self.get_mean_direction(avoid_signal_bearings, opposite=True)
         align_dir = self.get_mean_direction(flock_headings)
@@ -321,19 +319,20 @@ class Robot:
         cohesion_dir = self.get_mean_direction(signal_bearings)
 
         # combine all relevant directions with weights
+        weights = [w_avoid, w_align, w_cohesion]
         control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir] if x is not None]
         new_direction = self.get_mean_direction(control_dirs, ws=weights[:len(control_dirs)])
 
         # set new direction
         if new_direction is not None:
-            self.set_rotation_and_speed(new_direction, MAX_SPEED)
+            self.set_rotation_and_speed(new_direction, MAX_SPEED * speed)
         else:
-            self.set_rotation_and_speed(0, MAX_SPEED)
+            self.set_rotation_and_speed(0, MAX_SPEED * speed)
 
     def disperse_controls(self):
         signal_bearings = [s['bearing'] for s in self.rab_signals]
         if not signal_bearings:
-            self.set_rotation_and_speed(0, 0)
+            self.set_rotation_and_speed(0, MAX_SPEED * 1)
             return
 
         x, y = np.mean(np.cos(signal_bearings)), np.mean(np.sin(signal_bearings))
@@ -352,6 +351,15 @@ class Robot:
 
             DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
             """
+        min_wall_dist = 50
+
+        wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and (r['type'] == 'wall' or r['type'] == 'obstacle') ]
+        # if close to any walls, immediatly steer away and return
+        if wall_bearings:
+            opposite_wall_vector = self.get_mean_direction(wall_bearings, opposite=True)
+            self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
+            return
+
         match control_method:
             case 'flock':
                 self.flock_controls()

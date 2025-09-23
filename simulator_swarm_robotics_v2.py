@@ -310,7 +310,7 @@ class Robot:
         avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
         if self.light_intensity > 0.0:
             w_cohesion = w_light_cohesion
-            speed = 0.4
+            speed = 0.8
 
         # calculate all relevant behaviour directions (is None if not relevant)
         avoid_dir = self.get_mean_direction(avoid_signal_bearings, opposite=True)
@@ -353,8 +353,8 @@ class Robot:
             """
         min_wall_dist = 50
 
-        wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and (r['type'] == 'wall' or r['type'] == 'obstacle') ]
         # if close to any walls, immediatly steer away and return
+        wall_bearings = [a for (r, a) in zip(self.prox_readings, self.prox_angles) if r['distance'] < min_wall_dist and (r['type'] == 'wall' or r['type'] == 'obstacle') ]
         if wall_bearings:
             opposite_wall_vector = self.get_mean_direction(wall_bearings, opposite=True)
             self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
@@ -504,6 +504,10 @@ def main():
                     visualize = not visualize
                     print(
                         "Visualization", "enabled" if visualize else "disabled", "at", total_time)
+                elif event.key == pygame.K_c:
+                    control_method = 'flock' if control_method == 'disperse' else 'disperse'
+                    print(f"switched control methode to: {control_method}")
+
 
         if not paused:
             total_time += dt  # accumulate time

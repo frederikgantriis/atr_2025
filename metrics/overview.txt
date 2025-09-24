@@ -1,0 +1,2724 @@
+flock_exp-08_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 135.87
+
+flock_exp-07_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 88.59
+Cluster 1: avg pairwise distance = 147.50
+Cluster 2: avg pairwise distance = 54.59
+
+disperse_exp-04_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 45.16
+Cluster 1: avg pairwise distance = 77.79
+Cluster 2: avg pairwise distance = 66.53
+Cluster 3: avg pairwise distance = 57.07
+Cluster 4: avg pairwise distance = 74.44
+Cluster 5: avg pairwise distance = 58.78
+Cluster 6: avg pairwise distance = 52.32
+
+flock_exp-02_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 29.36
+Cluster 1: avg pairwise distance = 82.87
+Cluster 2: avg pairwise distance = 46.86
+
+disperse_exp-01_robots-20_frame-0500.csv
+-------------------
+
+disperse_exp-08_robots-10_frame-0250.csv
+-------------------
+
+disperse_exp-08_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-10_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-10_robots-05_frame-0100.csv
+-------------------
+
+flock_exp-09_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 103.76
+
+flock_exp-09_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.44
+
+flock_exp-09_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.17
+
+disperse_exp-02_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 70.48
+Cluster 1: avg pairwise distance = 64.54
+Cluster 2: avg pairwise distance = 55.02
+Cluster 3: avg pairwise distance = 61.52
+
+disperse_exp-01_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.19
+Cluster 1: avg pairwise distance = 100.30
+Cluster 2: avg pairwise distance = 69.71
+Cluster 3: avg pairwise distance = 47.22
+Cluster 4: avg pairwise distance = 61.11
+Cluster 5: avg pairwise distance = 73.39
+Cluster 6: avg pairwise distance = 66.10
+Cluster 7: avg pairwise distance = 40.39
+Cluster 8: avg pairwise distance = 30.89
+
+flock_exp-07_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.35
+
+flock_exp-07_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 99.80
+
+flock_exp-03_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 119.67
+
+flock_exp-06_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.32
+
+flock_exp-06_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 113.53
+
+flock_exp-06_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.48
+
+disperse_exp-07_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.75
+
+disperse_exp-04_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 28.22
+Cluster 1: avg pairwise distance = 59.67
+Cluster 2: avg pairwise distance = 61.38
+Cluster 3: avg pairwise distance = 36.78
+Cluster 4: avg pairwise distance = 56.21
+
+disperse_exp-10_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.31
+Cluster 1: avg pairwise distance = 76.64
+Cluster 2: avg pairwise distance = 69.40
+Cluster 3: avg pairwise distance = 39.00
+Cluster 4: avg pairwise distance = 21.44
+Cluster 5: avg pairwise distance = 44.50
+Cluster 6: avg pairwise distance = 78.12
+
+flock_exp-03_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.92
+Cluster 1: avg pairwise distance = 108.85
+Cluster 2: avg pairwise distance = 70.65
+Cluster 3: avg pairwise distance = 90.03
+
+flock_exp-08_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 123.10
+
+flock_exp-09_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 148.62
+
+disperse_exp-05_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 46.10
+Cluster 1: avg pairwise distance = 68.44
+
+flock_exp-06_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 118.10
+Cluster 1: avg pairwise distance = 87.12
+
+flock_exp-07_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 162.37
+
+flock_exp-03_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.30
+
+flock_exp-03_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 94.92
+Cluster 1: avg pairwise distance = 59.81
+
+disperse_exp-05_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 53.13
+Cluster 1: avg pairwise distance = 28.60
+Cluster 2: avg pairwise distance = 78.26
+Cluster 3: avg pairwise distance = 40.29
+Cluster 4: avg pairwise distance = 74.92
+Cluster 5: avg pairwise distance = 65.86
+Cluster 6: avg pairwise distance = 52.16
+
+disperse_exp-06_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.07
+Cluster 1: avg pairwise distance = 67.93
+Cluster 2: avg pairwise distance = 60.63
+Cluster 3: avg pairwise distance = 72.60
+Cluster 4: avg pairwise distance = 65.13
+Cluster 5: avg pairwise distance = 78.41
+
+disperse_exp-10_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-10_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-10_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 61.09
+
+flock_exp-09_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 98.38
+
+flock_exp-09_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.09
+Cluster 1: avg pairwise distance = 59.51
+
+disperse_exp-03_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.78
+Cluster 1: avg pairwise distance = 78.57
+
+flock_exp-02_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 118.22
+
+flock_exp-02_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 68.11
+
+flock_exp-02_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 102.67
+
+flock_exp-01_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 87.15
+
+flock_exp-01_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 38.51
+
+flock_exp-05_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 121.25
+
+flock_exp-01_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 123.76
+
+disperse_exp-09_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 1.60
+Cluster 1: avg pairwise distance = 9.57
+Cluster 2: avg pairwise distance = 59.93
+
+disperse_exp-03_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 68.66
+Cluster 1: avg pairwise distance = 54.62
+Cluster 2: avg pairwise distance = 43.30
+Cluster 3: avg pairwise distance = 7.77
+
+disperse_exp-03_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-04_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 121.73
+
+flock_exp-05_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 85.94
+Cluster 1: avg pairwise distance = 65.57
+
+flock_exp-05_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 53.40
+
+disperse_exp-06_robots-10_frame-0500.csv
+-------------------
+
+disperse_exp-06_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-09_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 98.55
+Cluster 1: avg pairwise distance = 69.22
+Cluster 2: avg pairwise distance = 78.13
+Cluster 3: avg pairwise distance = 64.75
+Cluster 4: avg pairwise distance = 45.23
+Cluster 5: avg pairwise distance = 37.94
+Cluster 6: avg pairwise distance = 59.55
+Cluster 7: avg pairwise distance = 51.48
+
+disperse_exp-07_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.36
+Cluster 1: avg pairwise distance = 58.13
+
+disperse_exp-07_robots-05_frame-0001.csv
+-------------------
+
+disperse_exp-04_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-04_robots-10_frame-0250.csv
+-------------------
+
+flock_exp-05_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 125.63
+
+flock_exp-01_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 132.55
+
+flock_exp-05_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 86.99
+
+flock_exp-05_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 46.01
+
+flock_exp-04_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 142.16
+
+flock_exp-10_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 81.61
+Cluster 1: avg pairwise distance = 51.82
+Cluster 2: avg pairwise distance = 33.20
+Cluster 3: avg pairwise distance = 91.52
+Cluster 4: avg pairwise distance = 73.83
+Cluster 5: avg pairwise distance = 28.34
+Cluster 6: avg pairwise distance = 77.54
+
+disperse_exp-08_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.02
+Cluster 1: avg pairwise distance = 12.85
+Cluster 2: avg pairwise distance = 38.19
+Cluster 3: avg pairwise distance = 26.59
+
+flock_exp-10_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 139.71
+
+disperse_exp-02_robots-10_frame-0500.csv
+-------------------
+
+disperse_exp-02_robots-05_frame-0500.csv
+-------------------
+
+flock_exp-01_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 132.21
+
+flock_exp-01_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 82.05
+
+disperse_exp-08_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.61
+Cluster 1: avg pairwise distance = 79.43
+Cluster 2: avg pairwise distance = 59.15
+
+disperse_exp-08_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 37.53
+Cluster 1: avg pairwise distance = 62.76
+Cluster 2: avg pairwise distance = 37.84
+Cluster 3: avg pairwise distance = 3.21
+
+disperse_exp-07_robots-20_frame-1000.csv
+-------------------
+
+disperse_exp-03_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 60.93
+Cluster 1: avg pairwise distance = 53.70
+Cluster 2: avg pairwise distance = 63.01
+Cluster 3: avg pairwise distance = 7.14
+Cluster 4: avg pairwise distance = 51.43
+Cluster 5: avg pairwise distance = 57.63
+Cluster 6: avg pairwise distance = 51.70
+
+disperse_exp-10_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.91
+Cluster 1: avg pairwise distance = 32.95
+Cluster 2: avg pairwise distance = 68.36
+Cluster 3: avg pairwise distance = 93.84
+Cluster 4: avg pairwise distance = 65.50
+Cluster 5: avg pairwise distance = 67.77
+Cluster 6: avg pairwise distance = 32.62
+
+disperse_exp-06_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 19.21
+
+disperse_exp-02_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 11.95
+Cluster 1: avg pairwise distance = 74.41
+Cluster 2: avg pairwise distance = 11.07
+Cluster 3: avg pairwise distance = 45.22
+Cluster 4: avg pairwise distance = 69.94
+Cluster 5: avg pairwise distance = 67.78
+
+disperse_exp-06_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-06_robots-10_frame-2500.csv
+-------------------
+
+flock_exp-07_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.68
+Cluster 1: avg pairwise distance = 78.13
+
+flock_exp-07_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.25
+
+flock_exp-04_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 48.03
+
+flock_exp-04_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 49.40
+Cluster 1: avg pairwise distance = 46.72
+
+disperse_exp-08_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-08_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-02_robots-05_frame-0100.csv
+-------------------
+
+disperse_exp-02_robots-10_frame-0100.csv
+-------------------
+
+flock_exp-01_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.37
+
+flock_exp-01_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 85.44
+
+flock_exp-08_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 83.66
+Cluster 1: avg pairwise distance = 100.44
+
+flock_exp-10_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 102.69
+Cluster 1: avg pairwise distance = 97.25
+
+disperse_exp-09_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-09_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-09_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 76.41
+Cluster 1: avg pairwise distance = 67.69
+
+disperse_exp-07_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 25.15
+Cluster 1: avg pairwise distance = 72.88
+Cluster 2: avg pairwise distance = 57.08
+Cluster 3: avg pairwise distance = 52.93
+Cluster 4: avg pairwise distance = 55.50
+Cluster 5: avg pairwise distance = 49.53
+Cluster 6: avg pairwise distance = 54.63
+
+disperse_exp-03_robots-20_frame-1000.csv
+-------------------
+
+flock_exp-10_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 135.47
+
+flock_exp-10_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 87.20
+
+flock_exp-10_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.73
+
+disperse_exp-09_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 61.47
+
+flock_exp-03_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 105.04
+
+flock_exp-03_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 82.22
+
+disperse_exp-02_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-02_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-06_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 45.36
+Cluster 1: avg pairwise distance = 3.75
+Cluster 2: avg pairwise distance = 48.79
+Cluster 3: avg pairwise distance = 63.64
+Cluster 4: avg pairwise distance = 45.50
+Cluster 5: avg pairwise distance = 43.27
+
+disperse_exp-02_robots-20_frame-5000.csv
+-------------------
+
+flock_exp-09_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 153.62
+
+disperse_exp-08_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 65.23
+Cluster 1: avg pairwise distance = 29.06
+Cluster 2: avg pairwise distance = 32.93
+Cluster 3: avg pairwise distance = 4.61
+Cluster 4: avg pairwise distance = 47.11
+Cluster 5: avg pairwise distance = 77.78
+
+flock_exp-05_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.51
+
+flock_exp-05_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 57.14
+
+disperse_exp-06_robots-05_frame-0100.csv
+-------------------
+
+disperse_exp-06_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-05_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.81
+
+flock_exp-06_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 132.19
+
+flock_exp-03_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 199.09
+
+disperse_exp-01_robots-20_frame-2500.csv
+-------------------
+
+disperse_exp-01_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-01_robots-05_frame-5000.csv
+-------------------
+
+flock_exp-09_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 70.25
+Cluster 1: avg pairwise distance = 75.89
+
+flock_exp-09_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.72
+
+flock_exp-03_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.07
+Cluster 1: avg pairwise distance = 89.50
+Cluster 2: avg pairwise distance = 76.26
+
+flock_exp-05_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.71
+
+flock_exp-06_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 116.28
+Cluster 1: avg pairwise distance = 37.97
+Cluster 2: avg pairwise distance = 71.75
+Cluster 3: avg pairwise distance = 7.30
+Cluster 4: avg pairwise distance = 72.95
+Cluster 5: avg pairwise distance = 72.09
+Cluster 6: avg pairwise distance = 2.87
+Cluster 7: avg pairwise distance = 34.68
+
+disperse_exp-04_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.52
+Cluster 1: avg pairwise distance = 48.20
+Cluster 2: avg pairwise distance = 75.77
+Cluster 3: avg pairwise distance = 46.19
+Cluster 4: avg pairwise distance = 22.14
+Cluster 5: avg pairwise distance = 70.26
+Cluster 6: avg pairwise distance = 44.68
+Cluster 7: avg pairwise distance = 74.39
+Cluster 8: avg pairwise distance = 75.77
+
+disperse_exp-10_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-10_robots-10_frame-0500.csv
+-------------------
+
+flock_exp-02_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 135.86
+
+flock_exp-08_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 48.61
+Cluster 1: avg pairwise distance = 60.61
+
+flock_exp-08_robots-05_frame-0001.csv
+-------------------
+
+disperse_exp-01_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.86
+
+flock_exp-07_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 151.70
+
+disperse_exp-04_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 35.44
+Cluster 1: avg pairwise distance = 16.89
+Cluster 2: avg pairwise distance = 69.73
+Cluster 3: avg pairwise distance = 78.58
+Cluster 4: avg pairwise distance = 62.20
+Cluster 5: avg pairwise distance = 62.66
+Cluster 6: avg pairwise distance = 23.18
+Cluster 7: avg pairwise distance = 67.97
+
+flock_exp-07_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 43.79
+Cluster 1: avg pairwise distance = 52.97
+Cluster 2: avg pairwise distance = 74.97
+Cluster 3: avg pairwise distance = 69.89
+Cluster 4: avg pairwise distance = 67.46
+
+flock_exp-04_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.17
+Cluster 1: avg pairwise distance = 102.66
+
+disperse_exp-05_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-05_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-05_robots-20_frame-2500.csv
+-------------------
+
+disperse_exp-04_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-04_robots-05_frame-1000.csv
+-------------------
+
+flock_exp-02_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 93.97
+Cluster 1: avg pairwise distance = 55.53
+Cluster 2: avg pairwise distance = 43.68
+Cluster 3: avg pairwise distance = 70.92
+Cluster 4: avg pairwise distance = 100.77
+Cluster 5: avg pairwise distance = 65.97
+Cluster 6: avg pairwise distance = 40.35
+Cluster 7: avg pairwise distance = 61.87
+Cluster 8: avg pairwise distance = 68.91
+
+flock_exp-01_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 117.59
+
+flock_exp-04_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 87.13
+
+flock_exp-04_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.04
+
+disperse_exp-07_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 57.12
+
+disperse_exp-07_robots-05_frame-0100.csv
+-------------------
+
+flock_exp-08_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 127.75
+
+flock_exp-10_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 140.94
+Cluster 1: avg pairwise distance = 126.20
+
+disperse_exp-09_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 73.18
+Cluster 1: avg pairwise distance = 29.40
+Cluster 2: avg pairwise distance = 31.09
+Cluster 3: avg pairwise distance = 39.67
+Cluster 4: avg pairwise distance = 17.53
+Cluster 5: avg pairwise distance = 72.54
+Cluster 6: avg pairwise distance = 44.75
+
+disperse_exp-08_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.03
+
+flock_exp-01_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 70.18
+Cluster 1: avg pairwise distance = 78.87
+Cluster 2: avg pairwise distance = 55.78
+
+flock_exp-01_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-02_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.95
+
+flock_exp-02_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 102.80
+
+disperse_exp-10_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 30.66
+
+disperse_exp-03_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-03_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-07_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.92
+Cluster 1: avg pairwise distance = 33.08
+Cluster 2: avg pairwise distance = 44.01
+
+disperse_exp-03_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 47.74
+
+disperse_exp-06_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.19
+Cluster 1: avg pairwise distance = 50.95
+Cluster 2: avg pairwise distance = 65.94
+Cluster 3: avg pairwise distance = 67.53
+Cluster 4: avg pairwise distance = 78.15
+
+disperse_exp-02_robots-20_frame-1000.csv
+-------------------
+
+flock_exp-10_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 73.96
+
+flock_exp-10_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 93.04
+
+disperse_exp-03_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-03_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.48
+
+flock_exp-09_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 137.67
+
+disperse_exp-08_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-08_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-08_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 18.77
+
+disperse_exp-09_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-09_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-07_robots-20_frame-5000.csv
+-------------------
+
+disperse_exp-03_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 52.17
+Cluster 1: avg pairwise distance = 54.66
+Cluster 2: avg pairwise distance = 72.26
+Cluster 3: avg pairwise distance = 61.84
+Cluster 4: avg pairwise distance = 69.75
+Cluster 5: avg pairwise distance = 67.74
+
+disperse_exp-07_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-07_robots-05_frame-2500.csv
+-------------------
+
+flock_exp-06_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 60.98
+
+flock_exp-06_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 112.29
+
+flock_exp-05_robots-10_frame-0001.csv
+-------------------
+
+flock_exp-05_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-10_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 113.03
+Cluster 1: avg pairwise distance = 137.39
+
+disperse_exp-09_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 41.59
+Cluster 1: avg pairwise distance = 56.21
+Cluster 2: avg pairwise distance = 98.73
+Cluster 3: avg pairwise distance = 27.84
+Cluster 4: avg pairwise distance = 41.43
+Cluster 5: avg pairwise distance = 29.17
+Cluster 6: avg pairwise distance = 60.75
+
+disperse_exp-06_robots-20_frame-1000.csv
+-------------------
+
+disperse_exp-02_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 70.97
+Cluster 1: avg pairwise distance = 52.24
+Cluster 2: avg pairwise distance = 19.23
+Cluster 3: avg pairwise distance = 71.77
+
+disperse_exp-05_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-05_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-01_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.35
+Cluster 1: avg pairwise distance = 71.52
+Cluster 2: avg pairwise distance = 34.72
+Cluster 3: avg pairwise distance = 27.33
+Cluster 4: avg pairwise distance = 35.62
+Cluster 5: avg pairwise distance = 35.54
+
+flock_exp-03_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.48
+Cluster 1: avg pairwise distance = 99.89
+Cluster 2: avg pairwise distance = 55.65
+Cluster 3: avg pairwise distance = 40.47
+Cluster 4: avg pairwise distance = 96.18
+Cluster 5: avg pairwise distance = 65.22
+
+flock_exp-06_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.62
+Cluster 1: avg pairwise distance = 68.57
+Cluster 2: avg pairwise distance = 44.32
+Cluster 3: avg pairwise distance = 64.19
+
+flock_exp-05_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 61.40
+Cluster 1: avg pairwise distance = 85.87
+Cluster 2: avg pairwise distance = 60.36
+
+disperse_exp-04_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-04_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-04_robots-20_frame-2500.csv
+-------------------
+
+flock_exp-06_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 168.28
+
+disperse_exp-05_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 26.33
+Cluster 1: avg pairwise distance = 29.96
+Cluster 2: avg pairwise distance = 71.82
+Cluster 3: avg pairwise distance = 34.75
+Cluster 4: avg pairwise distance = 43.59
+Cluster 5: avg pairwise distance = 54.22
+Cluster 6: avg pairwise distance = 7.19
+
+flock_exp-03_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 107.53
+
+flock_exp-09_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-09_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 60.33
+Cluster 1: avg pairwise distance = 89.21
+
+flock_exp-04_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 125.38
+Cluster 1: avg pairwise distance = 125.65
+
+flock_exp-07_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 44.15
+Cluster 1: avg pairwise distance = 65.84
+Cluster 2: avg pairwise distance = 63.94
+Cluster 3: avg pairwise distance = 96.52
+Cluster 4: avg pairwise distance = 72.03
+Cluster 5: avg pairwise distance = 56.15
+
+disperse_exp-05_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.88
+Cluster 1: avg pairwise distance = 65.57
+Cluster 2: avg pairwise distance = 73.18
+Cluster 3: avg pairwise distance = 69.13
+Cluster 4: avg pairwise distance = 29.58
+Cluster 5: avg pairwise distance = 79.19
+
+disperse_exp-01_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-01_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-10_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 53.37
+
+disperse_exp-10_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-01_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 160.11
+
+flock_exp-08_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.28
+
+flock_exp-08_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.86
+
+flock_exp-02_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.55
+Cluster 1: avg pairwise distance = 22.47
+Cluster 2: avg pairwise distance = 77.36
+Cluster 3: avg pairwise distance = 69.54
+Cluster 4: avg pairwise distance = 52.41
+Cluster 5: avg pairwise distance = 75.80
+
+disperse_exp-01_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.25
+Cluster 1: avg pairwise distance = 34.14
+Cluster 2: avg pairwise distance = 13.82
+Cluster 3: avg pairwise distance = 62.88
+Cluster 4: avg pairwise distance = 66.77
+Cluster 5: avg pairwise distance = 66.94
+Cluster 6: avg pairwise distance = 38.02
+
+flock_exp-02_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 120.07
+
+disperse_exp-04_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 18.36
+
+flock_exp-07_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 130.35
+
+disperse_exp-01_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.26
+Cluster 1: avg pairwise distance = 22.67
+Cluster 2: avg pairwise distance = 78.25
+Cluster 3: avg pairwise distance = 15.81
+Cluster 4: avg pairwise distance = 44.96
+
+flock_exp-08_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 125.19
+
+flock_exp-08_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 60.43
+
+disperse_exp-02_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.57
+Cluster 1: avg pairwise distance = 65.22
+Cluster 2: avg pairwise distance = 62.91
+Cluster 3: avg pairwise distance = 23.87
+
+flock_exp-10_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.35
+Cluster 1: avg pairwise distance = 69.65
+
+flock_exp-10_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.09
+Cluster 1: avg pairwise distance = 61.16
+
+flock_exp-03_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 116.29
+
+flock_exp-03_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 113.04
+
+flock_exp-03_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 59.76
+
+flock_exp-06_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 115.01
+
+flock_exp-02_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 93.16
+
+flock_exp-02_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.55
+
+disperse_exp-04_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 52.21
+Cluster 1: avg pairwise distance = 56.48
+Cluster 2: avg pairwise distance = 60.82
+Cluster 3: avg pairwise distance = 47.07
+Cluster 4: avg pairwise distance = 70.60
+Cluster 5: avg pairwise distance = 57.42
+Cluster 6: avg pairwise distance = 39.57
+
+disperse_exp-10_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 54.76
+
+disperse_exp-07_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 8.20
+Cluster 1: avg pairwise distance = 43.11
+Cluster 2: avg pairwise distance = 53.07
+Cluster 3: avg pairwise distance = 45.54
+Cluster 4: avg pairwise distance = 68.21
+Cluster 5: avg pairwise distance = 79.44
+
+flock_exp-08_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 102.95
+
+disperse_exp-04_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 40.92
+Cluster 1: avg pairwise distance = 18.15
+
+flock_exp-07_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 142.10
+
+disperse_exp-01_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 76.24
+Cluster 1: avg pairwise distance = 10.51
+Cluster 2: avg pairwise distance = 45.50
+Cluster 3: avg pairwise distance = 78.75
+Cluster 4: avg pairwise distance = 101.51
+Cluster 5: avg pairwise distance = 58.71
+Cluster 6: avg pairwise distance = 69.19
+Cluster 7: avg pairwise distance = 10.82
+
+flock_exp-02_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 99.87
+Cluster 1: avg pairwise distance = 60.01
+Cluster 2: avg pairwise distance = 62.58
+
+flock_exp-09_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 141.30
+
+flock_exp-07_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 98.25
+
+flock_exp-07_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.18
+
+flock_exp-07_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 126.72
+Cluster 1: avg pairwise distance = 63.39
+
+disperse_exp-06_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.49
+
+disperse_exp-05_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 39.13
+Cluster 1: avg pairwise distance = 45.68
+Cluster 2: avg pairwise distance = 63.94
+Cluster 3: avg pairwise distance = 29.94
+
+disperse_exp-03_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 35.13
+Cluster 1: avg pairwise distance = 69.78
+Cluster 2: avg pairwise distance = 78.33
+Cluster 3: avg pairwise distance = 58.62
+Cluster 4: avg pairwise distance = 68.81
+Cluster 5: avg pairwise distance = 45.23
+Cluster 6: avg pairwise distance = 78.25
+
+disperse_exp-10_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 13.01
+Cluster 1: avg pairwise distance = 75.57
+Cluster 2: avg pairwise distance = 33.24
+Cluster 3: avg pairwise distance = 2.17
+Cluster 4: avg pairwise distance = 44.11
+
+flock_exp-06_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 119.63
+
+flock_exp-06_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 84.18
+
+flock_exp-02_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 143.56
+
+flock_exp-03_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 150.31
+
+disperse_exp-09_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-09_robots-10_frame-0250.csv
+-------------------
+
+flock_exp-08_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 106.65
+
+flock_exp-08_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 94.33
+
+flock_exp-08_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.80
+
+flock_exp-09_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 128.56
+
+flock_exp-06_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 114.26
+Cluster 1: avg pairwise distance = 96.84
+Cluster 2: avg pairwise distance = 78.45
+
+disperse_exp-05_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.72
+Cluster 1: avg pairwise distance = 54.81
+Cluster 2: avg pairwise distance = 30.05
+Cluster 3: avg pairwise distance = 54.97
+Cluster 4: avg pairwise distance = 55.86
+Cluster 5: avg pairwise distance = 75.67
+
+disperse_exp-03_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-03_robots-10_frame-0500.csv
+-------------------
+
+disperse_exp-09_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 52.05
+Cluster 1: avg pairwise distance = 59.07
+Cluster 2: avg pairwise distance = 63.31
+Cluster 3: avg pairwise distance = 71.86
+
+flock_exp-05_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.23
+
+flock_exp-01_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 130.73
+
+disperse_exp-09_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 84.71
+Cluster 1: avg pairwise distance = 77.36
+Cluster 2: avg pairwise distance = 63.27
+Cluster 3: avg pairwise distance = 73.05
+Cluster 4: avg pairwise distance = 63.53
+Cluster 5: avg pairwise distance = 40.07
+Cluster 6: avg pairwise distance = 39.07
+
+disperse_exp-06_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.54
+
+disperse_exp-06_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 49.17
+
+disperse_exp-05_robots-10_frame-0250.csv
+-------------------
+
+disperse_exp-05_robots-05_frame-0250.csv
+-------------------
+
+flock_exp-04_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 131.50
+
+flock_exp-04_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.59
+
+flock_exp-04_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 106.31
+
+flock_exp-10_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 114.25
+Cluster 1: avg pairwise distance = 129.05
+
+disperse_exp-08_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 45.50
+Cluster 1: avg pairwise distance = 64.67
+Cluster 2: avg pairwise distance = 49.84
+Cluster 3: avg pairwise distance = 108.03
+Cluster 4: avg pairwise distance = 85.08
+Cluster 5: avg pairwise distance = 76.54
+Cluster 6: avg pairwise distance = 54.89
+
+flock_exp-04_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 59.60
+
+flock_exp-04_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.05
+Cluster 1: avg pairwise distance = 83.16
+
+disperse_exp-07_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-07_robots-10_frame-0500.csv
+-------------------
+
+flock_exp-05_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.61
+
+flock_exp-01_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 133.17
+
+flock_exp-04_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 103.96
+Cluster 1: avg pairwise distance = 80.70
+
+flock_exp-10_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 44.66
+Cluster 1: avg pairwise distance = 59.89
+Cluster 2: avg pairwise distance = 70.10
+Cluster 3: avg pairwise distance = 64.77
+
+disperse_exp-01_robots-10_frame-0250.csv
+-------------------
+
+disperse_exp-01_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-08_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 33.73
+Cluster 1: avg pairwise distance = 53.33
+Cluster 2: avg pairwise distance = 62.13
+Cluster 3: avg pairwise distance = 66.40
+
+disperse_exp-02_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 70.04
+
+disperse_exp-02_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 81.78
+
+disperse_exp-08_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 73.86
+Cluster 1: avg pairwise distance = 19.38
+Cluster 2: avg pairwise distance = 77.56
+Cluster 3: avg pairwise distance = 44.61
+Cluster 4: avg pairwise distance = 73.82
+Cluster 5: avg pairwise distance = 75.51
+Cluster 6: avg pairwise distance = 41.13
+
+disperse_exp-03_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.65
+Cluster 1: avg pairwise distance = 60.18
+Cluster 2: avg pairwise distance = 61.30
+Cluster 3: avg pairwise distance = 52.46
+Cluster 4: avg pairwise distance = 74.23
+Cluster 5: avg pairwise distance = 52.36
+Cluster 6: avg pairwise distance = 53.92
+
+disperse_exp-06_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 44.53
+Cluster 1: avg pairwise distance = 51.29
+
+flock_exp-05_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 129.85
+
+disperse_exp-09_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 10.57
+Cluster 1: avg pairwise distance = 62.77
+Cluster 2: avg pairwise distance = 48.29
+Cluster 3: avg pairwise distance = 65.49
+Cluster 4: avg pairwise distance = 77.48
+Cluster 5: avg pairwise distance = 61.91
+
+flock_exp-06_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 98.91
+Cluster 1: avg pairwise distance = 95.57
+Cluster 2: avg pairwise distance = 62.93
+
+flock_exp-05_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 74.72
+Cluster 1: avg pairwise distance = 87.91
+Cluster 2: avg pairwise distance = 86.55
+Cluster 3: avg pairwise distance = 77.28
+Cluster 4: avg pairwise distance = 16.18
+Cluster 5: avg pairwise distance = 39.26
+Cluster 6: avg pairwise distance = 73.17
+
+disperse_exp-07_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 96.30
+Cluster 1: avg pairwise distance = 49.95
+Cluster 2: avg pairwise distance = 53.09
+Cluster 3: avg pairwise distance = 79.05
+Cluster 4: avg pairwise distance = 63.92
+Cluster 5: avg pairwise distance = 19.62
+Cluster 6: avg pairwise distance = 43.69
+
+disperse_exp-03_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-03_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-02_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 59.38
+
+disperse_exp-02_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-02_robots-10_frame-5000.csv
+-------------------
+
+flock_exp-03_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 189.09
+
+flock_exp-10_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.90
+
+flock_exp-10_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 96.67
+
+flock_exp-10_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 146.65
+
+disperse_exp-09_robots-05_frame-0100.csv
+-------------------
+
+disperse_exp-09_robots-10_frame-0100.csv
+-------------------
+
+flock_exp-04_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 112.34
+Cluster 1: avg pairwise distance = 86.89
+
+disperse_exp-07_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.83
+Cluster 1: avg pairwise distance = 38.24
+Cluster 2: avg pairwise distance = 22.74
+Cluster 3: avg pairwise distance = 60.70
+Cluster 4: avg pairwise distance = 64.16
+Cluster 5: avg pairwise distance = 67.68
+
+disperse_exp-08_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 20.47
+Cluster 1: avg pairwise distance = 14.40
+
+flock_exp-10_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 99.42
+Cluster 1: avg pairwise distance = 55.11
+
+flock_exp-10_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 64.69
+
+disperse_exp-09_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 74.31
+Cluster 1: avg pairwise distance = 39.41
+
+disperse_exp-09_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-09_robots-10_frame-2500.csv
+-------------------
+
+flock_exp-01_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 129.28
+
+flock_exp-08_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 97.44
+
+flock_exp-08_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 56.77
+Cluster 1: avg pairwise distance = 62.03
+
+disperse_exp-02_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.66
+Cluster 1: avg pairwise distance = 21.04
+Cluster 2: avg pairwise distance = 36.16
+
+disperse_exp-07_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-07_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-03_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 49.02
+Cluster 1: avg pairwise distance = 53.89
+Cluster 2: avg pairwise distance = 65.98
+Cluster 3: avg pairwise distance = 50.36
+Cluster 4: avg pairwise distance = 43.27
+Cluster 5: avg pairwise distance = 55.26
+Cluster 6: avg pairwise distance = 65.34
+
+flock_exp-01_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 8.80
+Cluster 1: avg pairwise distance = 49.99
+Cluster 2: avg pairwise distance = 67.20
+Cluster 3: avg pairwise distance = 111.95
+Cluster 4: avg pairwise distance = 86.85
+
+flock_exp-02_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 159.00
+
+flock_exp-04_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 122.76
+Cluster 1: avg pairwise distance = 65.84
+Cluster 2: avg pairwise distance = 53.95
+Cluster 3: avg pairwise distance = 67.20
+
+flock_exp-10_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 108.82
+Cluster 1: avg pairwise distance = 123.34
+
+flock_exp-07_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 153.23
+
+disperse_exp-06_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-06_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-06_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 18.24
+Cluster 1: avg pairwise distance = 71.80
+
+disperse_exp-05_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.72
+Cluster 1: avg pairwise distance = 66.09
+
+disperse_exp-01_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 21.65
+Cluster 1: avg pairwise distance = 30.23
+Cluster 2: avg pairwise distance = 78.57
+Cluster 3: avg pairwise distance = 53.68
+Cluster 4: avg pairwise distance = 29.03
+Cluster 5: avg pairwise distance = 61.38
+
+disperse_exp-05_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-05_robots-05_frame-2500.csv
+-------------------
+
+flock_exp-04_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.05
+
+flock_exp-04_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.78
+Cluster 1: avg pairwise distance = 38.17
+
+flock_exp-07_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 96.90
+Cluster 1: avg pairwise distance = 38.34
+Cluster 2: avg pairwise distance = 11.49
+
+flock_exp-07_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-08_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.14
+
+disperse_exp-04_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.94
+Cluster 1: avg pairwise distance = 79.59
+
+disperse_exp-10_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 73.56
+Cluster 1: avg pairwise distance = 63.66
+Cluster 2: avg pairwise distance = 74.89
+Cluster 3: avg pairwise distance = 67.37
+Cluster 4: avg pairwise distance = 29.76
+Cluster 5: avg pairwise distance = 38.94
+Cluster 6: avg pairwise distance = 95.70
+Cluster 7: avg pairwise distance = 93.63
+Cluster 8: avg pairwise distance = 8.31
+
+disperse_exp-01_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-01_robots-05_frame-0100.csv
+-------------------
+
+flock_exp-08_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 54.75
+Cluster 1: avg pairwise distance = 72.52
+Cluster 2: avg pairwise distance = 40.53
+Cluster 3: avg pairwise distance = 45.56
+
+flock_exp-02_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.03
+
+flock_exp-02_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.36
+
+disperse_exp-10_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 76.80
+
+flock_exp-03_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 87.15
+
+flock_exp-03_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-09_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 105.49
+
+disperse_exp-01_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-01_robots-05_frame-2500.csv
+-------------------
+
+disperse_exp-05_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.81
+Cluster 1: avg pairwise distance = 72.16
+Cluster 2: avg pairwise distance = 78.12
+Cluster 3: avg pairwise distance = 2.85
+Cluster 4: avg pairwise distance = 57.95
+Cluster 5: avg pairwise distance = 29.86
+Cluster 6: avg pairwise distance = 64.35
+
+disperse_exp-01_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 44.90
+Cluster 1: avg pairwise distance = 49.43
+
+disperse_exp-04_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 26.58
+Cluster 1: avg pairwise distance = 67.37
+Cluster 2: avg pairwise distance = 52.77
+Cluster 3: avg pairwise distance = 70.60
+Cluster 4: avg pairwise distance = 37.93
+Cluster 5: avg pairwise distance = 64.60
+Cluster 6: avg pairwise distance = 62.67
+
+flock_exp-06_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 101.42
+
+flock_exp-06_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.77
+
+disperse_exp-05_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-05_robots-05_frame-0100.csv
+-------------------
+
+flock_exp-09_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 48.83
+Cluster 1: avg pairwise distance = 136.28
+Cluster 2: avg pairwise distance = 69.19
+Cluster 3: avg pairwise distance = 32.85
+Cluster 4: avg pairwise distance = 75.98
+Cluster 5: avg pairwise distance = 63.48
+Cluster 6: avg pairwise distance = 59.13
+
+flock_exp-07_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 143.35
+
+flock_exp-03_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 114.66
+
+flock_exp-02_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.14
+
+flock_exp-02_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 84.91
+
+flock_exp-06_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 107.66
+
+flock_exp-02_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 140.13
+
+disperse_exp-03_robots-10_frame-0250.csv
+-------------------
+
+disperse_exp-03_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-10_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 21.58
+
+disperse_exp-10_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-10_robots-05_frame-5000.csv
+-------------------
+
+flock_exp-09_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 173.33
+Cluster 1: avg pairwise distance = 105.40
+
+flock_exp-08_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 121.55
+
+disperse_exp-09_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 41.01
+Cluster 1: avg pairwise distance = 39.88
+Cluster 2: avg pairwise distance = 66.35
+Cluster 3: avg pairwise distance = 56.32
+Cluster 4: avg pairwise distance = 75.35
+Cluster 5: avg pairwise distance = 43.83
+Cluster 6: avg pairwise distance = 67.72
+Cluster 7: avg pairwise distance = 78.47
+
+flock_exp-06_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 91.64
+
+flock_exp-06_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.99
+
+disperse_exp-05_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-05_robots-10_frame-0500.csv
+-------------------
+
+flock_exp-10_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 80.19
+Cluster 1: avg pairwise distance = 127.24
+
+flock_exp-07_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 139.82
+
+flock_exp-03_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 111.34
+
+flock_exp-08_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.89
+Cluster 1: avg pairwise distance = 128.47
+
+disperse_exp-04_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 55.02
+
+disperse_exp-04_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.47
+
+disperse_exp-07_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.62
+
+disperse_exp-07_robots-05_frame-0250.csv
+-------------------
+
+flock_exp-06_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.46
+
+flock_exp-02_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 150.56
+
+flock_exp-06_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 84.50
+
+flock_exp-06_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 103.08
+
+flock_exp-08_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.80
+
+flock_exp-08_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 91.50
+
+disperse_exp-10_robots-20_frame-0100.csv
+-------------------
+
+flock_exp-09_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 59.78
+
+flock_exp-09_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 104.64
+
+flock_exp-09_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 104.11
+
+disperse_exp-01_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-01_robots-10_frame-0500.csv
+-------------------
+
+disperse_exp-08_robots-20_frame-0250.csv
+-------------------
+
+flock_exp-02_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.66
+
+flock_exp-02_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.36
+
+disperse_exp-08_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 49.87
+Cluster 1: avg pairwise distance = 79.41
+
+disperse_exp-08_robots-05_frame-0001.csv
+-------------------
+
+flock_exp-01_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 94.55
+Cluster 1: avg pairwise distance = 61.89
+Cluster 2: avg pairwise distance = 90.89
+Cluster 3: avg pairwise distance = 49.14
+
+disperse_exp-02_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.49
+
+flock_exp-10_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.90
+
+flock_exp-10_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 93.09
+Cluster 1: avg pairwise distance = 67.30
+
+flock_exp-04_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 116.18
+Cluster 1: avg pairwise distance = 96.40
+
+disperse_exp-07_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 74.51
+Cluster 1: avg pairwise distance = 42.24
+Cluster 2: avg pairwise distance = 59.54
+Cluster 3: avg pairwise distance = 25.73
+
+flock_exp-05_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 119.15
+
+flock_exp-05_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 57.31
+
+flock_exp-05_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 97.00
+
+disperse_exp-04_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 8.66
+
+disperse_exp-07_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 53.65
+Cluster 1: avg pairwise distance = 38.85
+Cluster 2: avg pairwise distance = 70.26
+Cluster 3: avg pairwise distance = 66.82
+Cluster 4: avg pairwise distance = 94.36
+Cluster 5: avg pairwise distance = 39.80
+
+disperse_exp-01_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 36.06
+Cluster 1: avg pairwise distance = 12.34
+Cluster 2: avg pairwise distance = 27.96
+Cluster 3: avg pairwise distance = 10.14
+Cluster 4: avg pairwise distance = 72.25
+Cluster 5: avg pairwise distance = 74.06
+Cluster 6: avg pairwise distance = 32.77
+Cluster 7: avg pairwise distance = 28.71
+
+disperse_exp-02_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.43
+Cluster 1: avg pairwise distance = 28.28
+Cluster 2: avg pairwise distance = 72.06
+Cluster 3: avg pairwise distance = 71.14
+Cluster 4: avg pairwise distance = 74.54
+Cluster 5: avg pairwise distance = 29.47
+
+flock_exp-04_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.19
+
+flock_exp-04_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.99
+
+disperse_exp-06_robots-20_frame-0500.csv
+-------------------
+
+flock_exp-05_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 83.07
+Cluster 1: avg pairwise distance = 67.53
+Cluster 2: avg pairwise distance = 58.47
+
+disperse_exp-03_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 59.73
+Cluster 1: avg pairwise distance = 60.91
+Cluster 2: avg pairwise distance = 69.88
+Cluster 3: avg pairwise distance = 42.20
+Cluster 4: avg pairwise distance = 71.72
+Cluster 5: avg pairwise distance = 36.14
+
+disperse_exp-03_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.38
+Cluster 1: avg pairwise distance = 71.38
+Cluster 2: avg pairwise distance = 66.12
+Cluster 3: avg pairwise distance = 17.98
+Cluster 4: avg pairwise distance = 27.69
+Cluster 5: avg pairwise distance = 27.07
+
+disperse_exp-09_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 65.30
+
+disperse_exp-09_robots-05_frame-0500.csv
+-------------------
+
+flock_exp-01_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 117.29
+
+flock_exp-01_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 104.93
+
+flock_exp-01_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 69.28
+
+flock_exp-04_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 138.10
+
+disperse_exp-06_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 53.32
+Cluster 1: avg pairwise distance = 92.76
+Cluster 2: avg pairwise distance = 40.70
+Cluster 3: avg pairwise distance = 39.53
+Cluster 4: avg pairwise distance = 75.57
+Cluster 5: avg pairwise distance = 24.38
+Cluster 6: avg pairwise distance = 77.23
+Cluster 7: avg pairwise distance = 62.26
+
+disperse_exp-05_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 102.28
+Cluster 1: avg pairwise distance = 20.57
+Cluster 2: avg pairwise distance = 40.86
+Cluster 3: avg pairwise distance = 54.38
+Cluster 4: avg pairwise distance = 74.73
+Cluster 5: avg pairwise distance = 72.19
+
+flock_exp-08_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 110.43
+
+flock_exp-08_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 65.51
+
+flock_exp-08_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 123.33
+
+disperse_exp-09_robots-20_frame-0250.csv
+-------------------
+
+flock_exp-03_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 105.28
+Cluster 1: avg pairwise distance = 59.12
+
+flock_exp-03_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 57.24
+Cluster 1: avg pairwise distance = 41.47
+
+flock_exp-09_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 75.11
+Cluster 1: avg pairwise distance = 64.11
+
+flock_exp-09_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.18
+
+disperse_exp-05_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 68.32
+
+disperse_exp-05_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.46
+Cluster 1: avg pairwise distance = 49.51
+
+disperse_exp-06_robots-05_frame-0250.csv
+-------------------
+
+disperse_exp-06_robots-10_frame-0250.csv
+-------------------
+
+flock_exp-07_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 145.44
+
+flock_exp-03_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 101.32
+
+flock_exp-07_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 94.63
+
+flock_exp-07_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 74.39
+
+flock_exp-06_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 138.90
+
+flock_exp-02_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 130.46
+
+disperse_exp-10_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 61.01
+Cluster 1: avg pairwise distance = 68.66
+Cluster 2: avg pairwise distance = 61.64
+Cluster 3: avg pairwise distance = 75.90
+Cluster 4: avg pairwise distance = 29.07
+Cluster 5: avg pairwise distance = 69.31
+Cluster 6: avg pairwise distance = 76.37
+
+flock_exp-09_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 118.50
+
+flock_exp-07_robots-10_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 85.81
+Cluster 1: avg pairwise distance = 48.97
+
+flock_exp-07_robots-05_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 60.22
+Cluster 1: avg pairwise distance = 58.48
+
+disperse_exp-04_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 41.27
+
+disperse_exp-04_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-10_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 45.95
+Cluster 1: avg pairwise distance = 33.89
+Cluster 2: avg pairwise distance = 46.55
+Cluster 3: avg pairwise distance = 25.14
+Cluster 4: avg pairwise distance = 62.78
+Cluster 5: avg pairwise distance = 34.34
+
+flock_exp-09_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 121.13
+
+disperse_exp-08_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 61.24
+Cluster 1: avg pairwise distance = 44.78
+Cluster 2: avg pairwise distance = 67.55
+Cluster 3: avg pairwise distance = 47.27
+Cluster 4: avg pairwise distance = 46.76
+Cluster 5: avg pairwise distance = 48.77
+Cluster 6: avg pairwise distance = 15.05
+Cluster 7: avg pairwise distance = 18.82
+
+flock_exp-03_robots-10_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 93.34
+
+flock_exp-03_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 114.85
+
+flock_exp-07_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 145.26
+
+flock_exp-03_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.34
+
+flock_exp-10_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 118.91
+
+disperse_exp-02_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 55.96
+
+disperse_exp-02_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 15.88
+
+flock_exp-08_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 109.18
+Cluster 1: avg pairwise distance = 83.03
+Cluster 2: avg pairwise distance = 67.46
+
+disperse_exp-01_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 40.59
+
+disperse_exp-01_robots-05_frame-0001.csv
+-------------------
+
+disperse_exp-10_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-10_robots-10_frame-1000.csv
+-------------------
+
+flock_exp-06_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 163.01
+
+flock_exp-02_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 124.00
+
+flock_exp-05_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 126.67
+
+flock_exp-01_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 74.23
+
+flock_exp-01_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 87.41
+
+disperse_exp-07_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 50.95
+Cluster 1: avg pairwise distance = 56.93
+Cluster 2: avg pairwise distance = 72.26
+Cluster 3: avg pairwise distance = 58.43
+Cluster 4: avg pairwise distance = 76.84
+Cluster 5: avg pairwise distance = 54.40
+Cluster 6: avg pairwise distance = 71.44
+
+disperse_exp-04_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.10
+Cluster 1: avg pairwise distance = 29.84
+Cluster 2: avg pairwise distance = 22.03
+Cluster 3: avg pairwise distance = 73.43
+Cluster 4: avg pairwise distance = 62.87
+Cluster 5: avg pairwise distance = 43.72
+Cluster 6: avg pairwise distance = 64.15
+Cluster 7: avg pairwise distance = 77.19
+
+disperse_exp-02_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.76
+Cluster 1: avg pairwise distance = 33.01
+Cluster 2: avg pairwise distance = 57.28
+
+disperse_exp-01_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.21
+
+disperse_exp-08_robots-05_frame-0500.csv
+-------------------
+
+disperse_exp-08_robots-10_frame-0500.csv
+-------------------
+
+flock_exp-10_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 55.56
+
+flock_exp-10_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 64.36
+
+disperse_exp-02_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 71.53
+Cluster 1: avg pairwise distance = 71.77
+Cluster 2: avg pairwise distance = 64.98
+Cluster 3: avg pairwise distance = 59.22
+Cluster 4: avg pairwise distance = 53.69
+Cluster 5: avg pairwise distance = 76.18
+
+flock_exp-01_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 83.86
+Cluster 1: avg pairwise distance = 61.75
+
+disperse_exp-07_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.77
+Cluster 1: avg pairwise distance = 63.69
+
+flock_exp-04_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 67.98
+Cluster 1: avg pairwise distance = 93.36
+
+disperse_exp-03_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 98.30
+Cluster 1: avg pairwise distance = 66.51
+Cluster 2: avg pairwise distance = 72.54
+Cluster 3: avg pairwise distance = 83.81
+Cluster 4: avg pairwise distance = 19.97
+Cluster 5: avg pairwise distance = 51.44
+Cluster 6: avg pairwise distance = 80.45
+
+flock_exp-05_robots-05_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 73.81
+
+flock_exp-05_robots-10_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 107.05
+
+flock_exp-01_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 152.40
+
+flock_exp-04_robots-05_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 83.55
+
+flock_exp-04_robots-10_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 77.31
+
+flock_exp-04_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 187.59
+Cluster 1: avg pairwise distance = 66.08
+
+disperse_exp-05_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 56.19
+Cluster 1: avg pairwise distance = 60.86
+
+disperse_exp-06_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 52.36
+Cluster 1: avg pairwise distance = 54.88
+Cluster 2: avg pairwise distance = 42.27
+Cluster 3: avg pairwise distance = 77.04
+Cluster 4: avg pairwise distance = 54.31
+Cluster 5: avg pairwise distance = 55.71
+
+flock_exp-05_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 134.48
+Cluster 1: avg pairwise distance = 73.10
+
+disperse_exp-06_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 78.73
+Cluster 1: avg pairwise distance = 48.51
+Cluster 2: avg pairwise distance = 52.24
+Cluster 3: avg pairwise distance = 76.36
+Cluster 4: avg pairwise distance = 50.71
+Cluster 5: avg pairwise distance = 71.45
+Cluster 6: avg pairwise distance = 54.62
+
+disperse_exp-09_robots-05_frame-0001.csv
+-------------------
+
+disperse_exp-09_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 28.85
+
+disperse_exp-03_robots-20_frame-0500.csv
+-------------------
+
+flock_exp-05_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 64.72
+Cluster 1: avg pairwise distance = 48.47
+Cluster 2: avg pairwise distance = 25.59
+Cluster 3: avg pairwise distance = 65.48
+Cluster 4: avg pairwise distance = 76.76
+
+flock_exp-06_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 103.90
+
+disperse_exp-07_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-07_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-07_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 66.20
+
+disperse_exp-06_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-06_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-02_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 37.54
+Cluster 1: avg pairwise distance = 41.96
+Cluster 2: avg pairwise distance = 57.88
+Cluster 3: avg pairwise distance = 77.09
+Cluster 4: avg pairwise distance = 47.97
+Cluster 5: avg pairwise distance = 44.06
+Cluster 6: avg pairwise distance = 77.62
+Cluster 7: avg pairwise distance = 15.50
+Cluster 8: avg pairwise distance = 74.83
+
+flock_exp-10_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 111.71
+
+flock_exp-03_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 174.37
+Cluster 1: avg pairwise distance = 82.58
+
+disperse_exp-08_robots-20_frame-5000.csv
+-------------------
+
+disperse_exp-08_robots-10_frame-2500.csv
+-------------------
+
+disperse_exp-08_robots-05_frame-2500.csv
+-------------------
+
+flock_exp-09_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 72.24
+
+flock_exp-09_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 76.74
+Cluster 1: avg pairwise distance = 79.13
+
+disperse_exp-03_robots-20_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.37
+
+flock_exp-05_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 126.42
+
+disperse_exp-06_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 81.66
+Cluster 1: avg pairwise distance = 26.92
+Cluster 2: avg pairwise distance = 63.16
+Cluster 3: avg pairwise distance = 71.85
+Cluster 4: avg pairwise distance = 29.38
+Cluster 5: avg pairwise distance = 56.11
+Cluster 6: avg pairwise distance = 46.21
+Cluster 7: avg pairwise distance = 52.78
+
+disperse_exp-09_robots-20_frame-1000.csv
+-------------------
+
+disperse_exp-03_robots-20_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 38.51
+
+disperse_exp-03_robots-10_frame-5000.csv
+-------------------
+
+disperse_exp-03_robots-05_frame-5000.csv
+-------------------
+
+disperse_exp-10_robots-10_frame-0250.csv
+-------------------
+
+disperse_exp-10_robots-05_frame-0250.csv
+-------------------
+
+flock_exp-02_robots-20_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 92.85
+Cluster 1: avg pairwise distance = 92.08
+Cluster 2: avg pairwise distance = 70.77
+
+flock_exp-01_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 101.94
+Cluster 1: avg pairwise distance = 66.95
+Cluster 2: avg pairwise distance = 53.24
+Cluster 3: avg pairwise distance = 72.37
+
+disperse_exp-08_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-08_robots-05_frame-0100.csv
+-------------------
+
+flock_exp-07_robots-30_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 123.31
+
+flock_exp-04_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 68.64
+Cluster 1: avg pairwise distance = 69.58
+Cluster 2: avg pairwise distance = 81.34
+Cluster 3: avg pairwise distance = 58.83
+Cluster 4: avg pairwise distance = 80.33
+Cluster 5: avg pairwise distance = 71.26
+Cluster 6: avg pairwise distance = 28.14
+
+flock_exp-10_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 136.93
+
+disperse_exp-06_robots-30_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 19.43
+Cluster 1: avg pairwise distance = 28.73
+Cluster 2: avg pairwise distance = 71.08
+Cluster 3: avg pairwise distance = 53.17
+Cluster 4: avg pairwise distance = 47.73
+Cluster 5: avg pairwise distance = 68.69
+
+disperse_exp-02_robots-10_frame-1000.csv
+-------------------
+
+disperse_exp-02_robots-05_frame-1000.csv
+-------------------
+
+disperse_exp-07_robots-20_frame-0100.csv
+-------------------
+
+flock_exp-04_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 118.48
+Cluster 1: avg pairwise distance = 87.60
+
+disperse_exp-08_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.15
+Cluster 1: avg pairwise distance = 62.30
+Cluster 2: avg pairwise distance = 54.32
+Cluster 3: avg pairwise distance = 38.81
+
+disperse_exp-09_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 40.34
+Cluster 1: avg pairwise distance = 32.69
+Cluster 2: avg pairwise distance = 19.79
+Cluster 3: avg pairwise distance = 77.06
+Cluster 4: avg pairwise distance = 28.47
+Cluster 5: avg pairwise distance = 49.92
+
+disperse_exp-02_robots-30_frame-0100.csv
+-------------------
+Cluster 0: avg pairwise distance = 64.98
+Cluster 1: avg pairwise distance = 42.04
+Cluster 2: avg pairwise distance = 76.72
+Cluster 3: avg pairwise distance = 60.64
+Cluster 4: avg pairwise distance = 56.76
+Cluster 5: avg pairwise distance = 74.31
+Cluster 6: avg pairwise distance = 36.29
+Cluster 7: avg pairwise distance = 33.29
+
+flock_exp-01_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 154.28
+
+flock_exp-08_robots-30_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.40
+Cluster 1: avg pairwise distance = 62.82
+Cluster 2: avg pairwise distance = 55.72
+Cluster 3: avg pairwise distance = 91.77
+Cluster 4: avg pairwise distance = 33.30
+Cluster 5: avg pairwise distance = 53.93
+Cluster 6: avg pairwise distance = 59.77
+Cluster 7: avg pairwise distance = 13.59
+Cluster 8: avg pairwise distance = 63.49
+
+disperse_exp-10_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.41
+Cluster 1: avg pairwise distance = 72.22
+Cluster 2: avg pairwise distance = 66.41
+Cluster 3: avg pairwise distance = 46.67
+
+flock_exp-07_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 82.11
+
+flock_exp-07_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 64.19
+Cluster 1: avg pairwise distance = 76.93
+
+disperse_exp-04_robots-05_frame-0100.csv
+-------------------
+
+disperse_exp-04_robots-10_frame-0100.csv
+-------------------
+
+disperse_exp-05_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 58.06
+Cluster 1: avg pairwise distance = 70.82
+Cluster 2: avg pairwise distance = 64.65
+Cluster 3: avg pairwise distance = 40.78
+Cluster 4: avg pairwise distance = 52.69
+Cluster 5: avg pairwise distance = 52.12
+Cluster 6: avg pairwise distance = 42.84
+
+disperse_exp-01_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 44.27
+
+flock_exp-02_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.40
+
+flock_exp-02_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 37.76
+Cluster 1: avg pairwise distance = 58.91
+Cluster 2: avg pairwise distance = 50.21
+
+flock_exp-01_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 101.56
+
+flock_exp-01_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 62.17
+Cluster 1: avg pairwise distance = 50.42
+
+flock_exp-08_robots-20_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 99.78
+
+disperse_exp-04_robots-30_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 63.53
+Cluster 1: avg pairwise distance = 52.32
+Cluster 2: avg pairwise distance = 29.87
+Cluster 3: avg pairwise distance = 71.32
+Cluster 4: avg pairwise distance = 16.39
+Cluster 5: avg pairwise distance = 49.50
+Cluster 6: avg pairwise distance = 70.64
+Cluster 7: avg pairwise distance = 74.63
+
+disperse_exp-10_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 113.98
+Cluster 1: avg pairwise distance = 49.38
+Cluster 2: avg pairwise distance = 75.93
+Cluster 3: avg pairwise distance = 41.11
+
+flock_exp-09_robots-20_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 88.28
+Cluster 1: avg pairwise distance = 66.90
+Cluster 2: avg pairwise distance = 27.50
+Cluster 3: avg pairwise distance = 74.75
+Cluster 4: avg pairwise distance = 72.81
+Cluster 5: avg pairwise distance = 58.40
+
+flock_exp-03_robots-05_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 65.92
+
+flock_exp-03_robots-10_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 96.54
+
+flock_exp-09_robots-30_frame-0500.csv
+-------------------
+Cluster 0: avg pairwise distance = 116.68
+
+disperse_exp-05_robots-20_frame-1000.csv
+-------------------
+Cluster 0: avg pairwise distance = 55.39
+Cluster 1: avg pairwise distance = 59.42
+
+disperse_exp-01_robots-30_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 51.82
+Cluster 1: avg pairwise distance = 43.01
+Cluster 2: avg pairwise distance = 54.59
+Cluster 3: avg pairwise distance = 71.18
+Cluster 4: avg pairwise distance = 63.12
+
+disperse_exp-04_robots-20_frame-5000.csv
+-------------------
+Cluster 0: avg pairwise distance = 35.35
+Cluster 1: avg pairwise distance = 77.06
+
+disperse_exp-04_robots-05_frame-2500.csv
+-------------------
+Cluster 0: avg pairwise distance = 42.51
+
+disperse_exp-04_robots-10_frame-2500.csv
+-------------------
+
+flock_exp-05_robots-10_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 111.20
+
+flock_exp-05_robots-05_frame-0250.csv
+-------------------
+Cluster 0: avg pairwise distance = 69.47
+
+flock_exp-06_robots-05_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 47.46
+
+flock_exp-06_robots-10_frame-0001.csv
+-------------------
+Cluster 0: avg pairwise distance = 79.71
+

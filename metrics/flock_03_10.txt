@@ -1,0 +1,30 @@
+1
+-------------------
+Cluster 0: avg pairwise distance = 87.15
+
+100
+-------------------
+Cluster 0: avg pairwise distance = 105.28
+Cluster 1: avg pairwise distance = 59.12
+
+250
+-------------------
+Cluster 0: avg pairwise distance = 105.04
+
+500
+-------------------
+Cluster 0: avg pairwise distance = 96.54
+
+1000
+-------------------
+Cluster 0: avg pairwise distance = 94.92
+Cluster 1: avg pairwise distance = 59.81
+
+2500
+-------------------
+Cluster 0: avg pairwise distance = 93.34
+
+5000
+-------------------
+Cluster 0: avg pairwise distance = 113.04
+

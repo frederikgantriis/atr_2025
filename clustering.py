@@ -14,7 +14,22 @@ os.makedirs("metrics", exist_ok=True)
 
 pbar = tqdm(total=len(filenames))
 
+filenames.sort()
+
+
+def avg_pairwise_dist(points):
+    dists = pairwise_distances(points)
+    return np.sum(dists) / (len(points)
+                            * (len(points) - 1))
+
+
 for filename in filenames:
+    args = filename.replace(".", "_").split("_")
+    mode = args[0]
+    exp_nr = args[1].split("-")[1]
+    robot_amount = args[2].split("-")[1]
+    frame_count = int(args[3].split("-")[1])
+
     results = np.genfromtxt(os.path.join("logs", filename), delimiter=",")
 
     # labels = KMeans(4).fit_predict(results)
@@ -28,7 +43,7 @@ for filename in filenames:
     plt.ylim([0, 600])
     plt.title("Positions")
     plt.grid(True)
-    plt.savefig(f"./metrics/{filename}_positions.png")
+    plt.savefig(f"./metrics/{mode}_{exp_nr}_{robot_amount}_positions.png")
     plt.close()
 
     # Plot clusters
@@ -59,12 +74,12 @@ for filename in filenames:
     plt.ylim([0, 600])
     plt.title('DBSCAN Clusters')
     plt.grid(True)
-    plt.savefig(f"./metrics/{filename}_clusters.png")
+    plt.savefig(f"./metrics/{mode}_{exp_nr}_{robot_amount}_clusters.png")
     plt.close()
 
     # Compute average pairwise distance within each cluster
-    with open("./metrics/overview.txt", "a") as f:
-        f.write(f"{filename}\n")
+    with open(f"./metrics/{mode}_{exp_nr}_{robot_amount}.txt", "a") as f:
+        f.write(f"{frame_count}\n")
         f.write("-------------------\n")
 
         for k in unique_labels:
@@ -72,16 +87,20 @@ for filename in filenames:
                 continue  # skip noise
             cluster_points = results[labels == k]
             if len(cluster_points) > 1:
-                dists = pairwise_distances(cluster_points)
-                avg_dist = np.sum(dists) / (len(cluster_points)
-                                            * (len(cluster_points) - 1))
+                dist = avg_pairwise_dist(cluster_points)
 
                 f.write(
-                    f'Cluster {k}: avg pairwise distance = {avg_dist:.2f}\n'
+                    f'Cluster {k}: avg pairwise distance = {dist:.2f}\n'
                 )
 
         f.write("\n")
 
+    with open(f"./metrics/{mode}_{exp_nr}_{robot_amount}_overall_avg.yaml", "a") as f:
+        dist = avg_pairwise_dist(results)
+        f.write(f"{frame_count}: {dist}")
+        f.write("\n")
+
     pbar.update(1)
+
 
 pbar.close()

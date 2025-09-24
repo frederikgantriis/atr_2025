@@ -5,7 +5,7 @@ import numpy as np
 import pygame
 
 # Pygame setup
-WIDTH, HEIGHT = 800, 600
+WIDTH, HEIGHT = 1400, 1000
 BG_COLOR = (30, 30, 30)
 ROBOT_COLOR = (200, 255, 255)
 OBSTACLE_COLOR = (200, 50, 50)
@@ -91,13 +91,13 @@ class Obstacle:
 
 
 OBSTACLES = [
-    # Obstacle(pos=(200, 150), radius=20),
-    # Obstacle(pos=(600, 120), radius=30),
+    Obstacle(pos=(200, 150), radius=20),
+    Obstacle(pos=(600, 120), radius=30),
 ]
 
 LIGHT_SOURCES = [
-    # LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
-    # LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
+    LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
 ]
 
 

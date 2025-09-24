@@ -448,17 +448,18 @@ def logging_init():  # initialize your log file
 
 
 def log_metrics(frame_count, total_time, metrics):  # write to your log file
-    if frame_count in [1, 100, 250, 500, 1000, 2500, 5000]:
-        for i in range(1, 100):
-            filepath = f"./logs/{control_method}_exp-{i:02d}_robots-{n_robots:02d}_frame-{frame_count:04d}.csv"
-            if not os.path.exists(filepath):
-                with open(filepath, "a") as f:
-                    np.savetxt(f, metrics[0], delimiter=",", fmt="%s")
-                break
-
-    if frame_count == 5000:
-        print('dø')
-        exit()
+    pass
+    # if frame_count in [1, 100, 250, 500, 1000, 2500, 5000]:
+    #     for i in range(1, 100):
+    #         filepath = f"./logs/{control_method}_exp-{i:02d}_robots-{n_robots:02d}_frame-{frame_count:04d}.csv"
+    #         if not os.path.exists(filepath):
+    #             with open(filepath, "a") as f:
+    #                 np.savetxt(f, metrics[0], delimiter=",", fmt="%s")
+    #             break
+    #
+    # if frame_count == 5000:
+    #     print('dø')
+    #     exit()
 
 
 
@@ -509,7 +510,7 @@ def main():
     total_time = 0.0
     running = True
     paused = False
-    visualize = False
+    visualize = True
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:

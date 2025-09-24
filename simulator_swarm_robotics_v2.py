@@ -1,10 +1,11 @@
 from sys import argv
+import os
 
 import numpy as np
 import pygame
 
 # Pygame setup
-WIDTH, HEIGHT = 1400, 1000
+WIDTH, HEIGHT = 800, 600
 BG_COLOR = (30, 30, 30)
 ROBOT_COLOR = (200, 255, 255)
 OBSTACLE_COLOR = (200, 50, 50)
@@ -90,13 +91,13 @@ class Obstacle:
 
 
 OBSTACLES = [
-    Obstacle(pos=(200, 150), radius=20),
-    Obstacle(pos=(600, 120), radius=30),
+    # Obstacle(pos=(200, 150), radius=20),
+    # Obstacle(pos=(600, 120), radius=30),
 ]
 
 LIGHT_SOURCES = [
-    LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
-    LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
+    # LightSource(pos=(100, 100), intensity=1.0, core_radius=50, decay_radius=300),
+    # LightSource(pos=(700, 500), intensity=0.9, core_radius=10, decay_radius=100)
 ]
 
 
@@ -447,22 +448,39 @@ def logging_init():  # initialize your log file
 
 
 def log_metrics(frame_count, total_time, metrics):  # write to your log file
-    pass
+    if frame_count in [1, 100, 250, 500, 1000, 2500, 5000]:
+        for i in range(1, 100):
+            filepath = f"./logs/{control_method}_exp-{i:02d}_robots-{n_robots:02d}_frame-{frame_count:04d}.csv"
+            if not os.path.exists(filepath):
+                with open(filepath, "a") as f:
+                    np.savetxt(f, metrics[0], delimiter=",", fmt="%s")
+                break
+
+    if frame_count == 5000:
+        print('dø')
+        exit()
+
 
 
 def logging_close():  # close your log file
     pass
 
 
-def compute_metrics():  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
-    return []
+def compute_metrics(robots):  # pass as many arguments as you need and compute relevant metrics to be logged for performance analysis
+    positions = [x._pos for x in robots]
+    positions = np.array(positions)
+    return [positions]
 
 
 def main():
     global control_method
     control_method = 'flock' # default control method
     valid_methods = ['flock', 'disperse']
+    global n_robots
+    n_robots = 0
     try:
+        if argv[2]:
+            n_robots = int(argv[2])
         if argv[1] in valid_methods:
             control_method = argv[1]
         else:
@@ -475,7 +493,7 @@ def main():
     robots = []
 
     # np.random.seed(42)
-    for i in range(NUM_ROBOTS):
+    for i in range(NUM_ROBOTS if not n_robots else n_robots):
         pos = np.random.uniform([ROBOT_RADIUS, ROBOT_RADIUS], [
             WIDTH - ROBOT_RADIUS, HEIGHT - ROBOT_RADIUS])
         heading = np.random.uniform(0, 2 * np.pi)
@@ -491,7 +509,7 @@ def main():
     total_time = 0.0
     running = True
     paused = False
-    visualize = True
+    visualize = False
     while running:
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
@@ -521,7 +539,7 @@ def main():
             for robot in robots:
                 robot.move(dt)
 
-            metrics = compute_metrics()
+            metrics = compute_metrics(robots)
             log_metrics(frame_count, total_time, metrics)
 
             frame_count += 1

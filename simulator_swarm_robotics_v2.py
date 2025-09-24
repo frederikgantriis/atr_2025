@@ -287,17 +287,7 @@ class Robot:
 
 
     def robot_controller(self):
-        """
-            Implement your control logic here.
-            You can access:
-            - self.rab_signals: list of received messages from other robots
-            - self.prox_readings: proximity sensor data
-            - self.light_intensity: light at current location
-
-            Use only self.set_rotation_and_speed(...) to move the robot.
-
-            DO NOT modify robot._linear_velocity or robot._angular_velocity directly. DO NOT modify move()
-            """
+        # Swarm Robotics Group B (sibh, frgm & otja)
         def get_mean_direction(bearings, opposite=False, ws=None):
             if not bearings:
                 return None
@@ -478,16 +468,16 @@ def compute_metrics():  # pass as many arguments as you need and compute relevan
 
 
 def main():
-    global control_method
-    control_method = 'disperse' # default control method
-    valid_methods = ['flock', 'disperse']
-    try:
-        if argv[1] in valid_methods:
-            control_method = argv[1]
-        else:
-            print(f'unknown control method, defaulting to: {control_method}...')
-    except IndexError:
-        print(f"no control method set, defaulting to: {control_method}...")
+    # global control_method
+    # control_method = 'disperse' # default control method
+    # valid_methods = ['flock', 'disperse']
+    # try:
+    #     if argv[1] in valid_methods:
+    #         control_method = argv[1]
+    #     else:
+    #         print(f'unknown control method, defaulting to: {control_method}...')
+    # except IndexError:
+    #     print(f"no control method set, defaulting to: {control_method}...")
 
     clock = pygame.time.Clock()
     dt = SIM_DT

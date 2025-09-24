@@ -4,13 +4,14 @@ import numpy as np
 import pygame
 
 # Pygame setup
-WIDTH, HEIGHT = 1400, 1000
+WIDTH, HEIGHT = 800, 600
 BG_COLOR = (30, 30, 30)
 ROBOT_COLOR = (200, 255, 255)
+ROBOT_COLOR_FLOCK = (255, 20, 20)
 OBSTACLE_COLOR = (200, 50, 50)
 FONT_COLOR = (255, 255, 255)
 
-SIM_DT = 10 / 60.0
+SIM_DT = 1 / 60.0
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -89,8 +90,8 @@ class Obstacle:
 
 
 OBSTACLES = [
-    Obstacle(pos=(200, 150), radius=20),
-    Obstacle(pos=(600, 120), radius=30),
+    # Obstacle(pos=(200, 150), radius=20),
+    # Obstacle(pos=(600, 120), radius=30),
 ]
 
 LIGHT_SOURCES = [
@@ -312,7 +313,8 @@ class Robot:
             w_avoid = 0.8
             w_align = 1
             w_cohesion = 0.1
-            w_light_cohesion = 0.8
+            w_light_cohesion = 2.5
+            w_follow_light = 0.2
             speed = 1
 
             # trigger distance for avoidance behaviours
@@ -321,19 +323,24 @@ class Robot:
             flock_headings = [s['message']['heading'] for s in self.rab_signals]
             signal_bearings = [s['bearing'] for s in self.rab_signals]
             avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
+            light_bearing = [s['bearing'] for s in self.rab_signals if s['message']['comm_signal'] == 2]
+            if light_bearing:
+                w_cohesion = w_light_cohesion
             if self.light_intensity > 0.0:
                 w_cohesion = w_light_cohesion
-                speed = 0.8
+                self.set_rotation_and_speed(0, 0)
+                return
 
             # calculate all relevant behaviour directions (is None if not relevant)
             avoid_dir = get_mean_direction(avoid_signal_bearings, opposite=True)
             align_dir = get_mean_direction(flock_headings)
             align_dir = self.get_relative_heading(align_dir) if align_dir is not None else align_dir
             cohesion_dir = get_mean_direction(signal_bearings)
+            light_dir = get_mean_direction(light_bearing)
 
             # combine all relevant directions with weights
-            weights = [w_avoid, w_align, w_cohesion]
-            control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir] if x is not None]
+            weights = [w_avoid, w_align, w_cohesion, w_follow_light]
+            control_dirs = [x for x in [avoid_dir, align_dir, cohesion_dir, light_dir] if x is not None]
             new_direction = get_mean_direction(control_dirs, ws=weights[:len(control_dirs)])
 
             # set new direction
@@ -360,13 +367,26 @@ class Robot:
             self.set_rotation_and_speed(opposite_wall_vector, MAX_SPEED)
             return
 
-        match control_method:
-            case 'flock':
-                flock_controls()
-            case 'disperse':
-                disperse_controls()
-            case _:
-                flock_controls()
+
+        light_found = [s for s in self.rab_signals if s['message']['comm_signal'] == 2 or s['message']['comm_signal'] == 1]
+        if self.light_intensity > 0.0:
+            self.broadcast_signal = 2
+        elif light_found:
+            self.broadcast_signal = 1
+        else:
+            self.broadcast_signal = 0
+
+        if self.broadcast_signal == 0:
+            disperse_controls()
+        else:
+            flock_controls()
+        # match control_method:
+        #     case 'flock':
+        #         flock_controls()
+        #     case 'disperse':
+        #         disperse_controls()
+        #     case _:
+        #         disperse_controls()
 
 
 
@@ -410,8 +430,9 @@ class Robot:
 
             pygame.draw.line(screen, color, start, end, 2)
 
+        r_color = ROBOT_COLOR_FLOCK if self.broadcast_signal is not 0 else ROBOT_COLOR
         # --- Robot body ---
-        pygame.draw.circle(screen, ROBOT_COLOR,
+        pygame.draw.circle(screen, r_color,
                            self._pos.astype(int), self._radius)
 
         # --- Heading indicator ---
@@ -460,7 +481,7 @@ def compute_metrics():  # pass as many arguments as you need and compute relevan
 
 def main():
     global control_method
-    control_method = 'flock' # default control method
+    control_method = 'disperse' # default control method
     valid_methods = ['flock', 'disperse']
     try:
         if argv[1] in valid_methods:

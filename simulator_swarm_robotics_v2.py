@@ -311,7 +311,7 @@ class Robot:
         avoid_signal_bearings = [s['bearing'] for s in self.rab_signals if s['distance'] < min_flock_dist]
         if self.light_intensity > 0.0:
             w_cohesion = w_light_cohesion
-            speed = 0.8
+            speed = 0.4
 
         # calculate all relevant behaviour directions (is None if not relevant)
         avoid_dir = self.get_mean_direction(avoid_signal_bearings, opposite=True)

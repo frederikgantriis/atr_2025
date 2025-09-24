@@ -7,11 +7,10 @@ import pygame
 WIDTH, HEIGHT = 800, 600
 BG_COLOR = (30, 30, 30)
 ROBOT_COLOR = (200, 255, 255)
-ROBOT_COLOR_FLOCK = (255, 20, 20)
 OBSTACLE_COLOR = (200, 50, 50)
 FONT_COLOR = (255, 255, 255)
 
-SIM_DT = 1 / 60.0
+SIM_DT = 10 / 60.0
 
 pygame.init()
 screen = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -430,9 +429,8 @@ class Robot:
 
             pygame.draw.line(screen, color, start, end, 2)
 
-        r_color = ROBOT_COLOR_FLOCK if self.broadcast_signal is not 0 else ROBOT_COLOR
         # --- Robot body ---
-        pygame.draw.circle(screen, r_color,
+        pygame.draw.circle(screen, ROBOT_COLOR,
                            self._pos.astype(int), self._radius)
 
         # --- Heading indicator ---

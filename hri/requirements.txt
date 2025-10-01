@@ -1,0 +1,10 @@
+openai-whisper
+sounddevice
+scipy
+numpy
+pygame
+mediapipe
+opencv-python
+piper-tts
+asyncio
+aiohttp

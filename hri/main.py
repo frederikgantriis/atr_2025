@@ -4,14 +4,16 @@ Virtual Robot Face with MAR Detection and FAST Speech Recognition
 Ultra-fast streaming speech recognition with real-time transcription feedback.
 """
 import asyncio
-import time
 import sys
-from robot_face_system import RobotFace, RobotState
+import threading
+import time
+
 from face_detector import FaceDetector
+from llm_handler import AsyncLLMHandler, LLMResponse
+from robot_face_system import RobotFace, RobotState
 from speech_handler import SpeechDetector
 from voice_handler import RobotVoice
-from llm_handler import AsyncLLMHandler, LLMResponse
-import threading
+
 
 class Robot:
     """Manages robot state and responses"""
@@ -78,6 +80,8 @@ class Robot:
             if self.face_visible:
                 print("👤 FACE DETECTED") 
                 #----here you could initiate the interaction --------------
+                self.robot_face.set_eye_position(self.head_x, self.head_y)
+                self.makeTheRobotSay('hello!')
                 
 
                 #----END: here you could initiate the interaction --------------
@@ -163,12 +167,15 @@ class Robot:
 
     def reactWithRobotFace(self):
         self.robot_face.loop() #<-- main loop of the face
+
+        if self.face_visible:
+            self.robot_face.set_eye_position(self.head_x, self.head_y)
         
         if self.robot_voice.is_speaking():
             self.robot_face.set_state(RobotState.SPEAKING)
         #-----------outcomment below to enable listening state for robot face ----
-        #elif self.mouth_speaking or self.speech_detection.is_currently_recording():
-            #self.robot_face.set_state(RobotState.LISTENING)
+        # elif self.mouth_speaking or self.speech_detection.is_currently_recording():
+        #     self.robot_face.set_state(RobotState.LISTENING)
         #-----------END outcomment -----------------------------------------------
         else:
             self.robot_face.set_state(RobotState.IDLE)

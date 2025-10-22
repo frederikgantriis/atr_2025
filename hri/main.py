@@ -97,7 +97,7 @@ class Robot:
                 print("no words detected")
                 return
             #------------------- turn taking code here to skip the wait-----------------
-            if self.mar_value < 0.04:
+            if self.mar_value < 0.06:
                 print('mar low')
                 self.processWithLLM(transcription)
             

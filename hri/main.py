@@ -22,6 +22,7 @@ class Robot:
     speech_detection = None
     robot_voice = None
     llm_handler = None
+    chunk_buf = ""
 
      # State tracking
     last_speaking = False
@@ -99,7 +100,8 @@ class Robot:
             #------------------- turn taking code here to skip the wait-----------------
             if self.mar_value < 0.06:
                 print('mar low')
-                self.processWithLLM(transcription)
+                self.speech_detection.get_immediate_final_transcription()
+
             
 
 
@@ -137,6 +139,11 @@ class Robot:
     def handle_LLM_chunk(self, chunk: str):
         print(chunk, end='', flush=True)  # Display each word as it arrives
         #-------------------- buffering words code here -----------------------
+        self.chunk_buf += " " + chunk
+        if chunk in ["!", ".", "?"]:
+            self.makeTheRobotSay(self.chunk_buf)
+            self.chunk_buf = ""
+
 
 
 
@@ -163,7 +170,7 @@ class Robot:
         asyncio.get_event_loop().create_task(self.llm_handler.send_prompt_streaming(
             utterance, 
             callback=self.handle_LLM_chunk,
-            final_callback=self.handle_LLM_complete
+            # final_callback=self.handle_LLM_complete
         ))
 
     def makeTheRobotSay(self, utterance):

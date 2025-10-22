@@ -81,7 +81,7 @@ class Robot:
                 print("👤 FACE DETECTED") 
                 #----here you could initiate the interaction --------------
                 self.robot_face.set_eye_position(self.head_x, self.head_y)
-                self.makeTheRobotSay('hello!')
+                self.makeTheRobotSay('hello! you look like someone named frederik')
                 
 
                 #----END: here you could initiate the interaction --------------
@@ -92,10 +92,14 @@ class Robot:
 
     async def handle_human_speech_pause(self, transcription: str):
             print(f"PAUSE: '{transcription}'")
+            print(self.mar)
             if transcription == '':
                 print("no words detected")
                 return
             #------------------- turn taking code here to skip the wait-----------------
+            if self.mar_value < 0.10:
+                print('mar low')
+                self.processWithLLM(transcription)
             
 
 

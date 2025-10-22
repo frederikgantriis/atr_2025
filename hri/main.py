@@ -92,7 +92,7 @@ class Robot:
 
     async def handle_human_speech_pause(self, transcription: str):
             print(f"PAUSE: '{transcription}'")
-            print(self.mar)
+            print(self.mar_value)
             if transcription == '':
                 print("no words detected")
                 return

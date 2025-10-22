@@ -23,6 +23,7 @@ class Robot:
     robot_voice = None
     llm_handler = None
     chunk_buf = ""
+    has_introduced = False
 
      # State tracking
     last_speaking = False
@@ -82,9 +83,9 @@ class Robot:
                 print("👤 FACE DETECTED") 
                 #----here you could initiate the interaction --------------
                 self.robot_face.set_eye_position(self.head_x, self.head_y)
-                self.makeTheRobotSay('hello! you look like someone named frederik')
-                
-
+                if not self.has_introduced:
+                    self.makeTheRobotSay("Hello there. How's your week shaping up so far? Any exciting plans or just taking things easy?")
+                    self.has_introduced = True
                 #----END: here you could initiate the interaction --------------
             else:
                 print("👤 FACE LOST") #<----here you could double check this or end the interaction
@@ -98,6 +99,7 @@ class Robot:
                 print("no words detected")
                 return
             #------------------- turn taking code here to skip the wait-----------------
+            time.sleep(0.2)
             if self.mar_value < 0.06:
                 print('mar low')
                 self.speech_detection.get_immediate_final_transcription()
@@ -139,7 +141,10 @@ class Robot:
     def handle_LLM_chunk(self, chunk: str):
         print(chunk, end='', flush=True)  # Display each word as it arrives
         #-------------------- buffering words code here -----------------------
-        self.chunk_buf += " " + chunk
+        if chunk == "'":
+            self.chunk_buf = self.chunk_buf[:-1] + chunk
+        else:
+            self.chunk_buf += chunk + " "
         if chunk in ["!", ".", "?"]:
             self.makeTheRobotSay(self.chunk_buf)
             self.chunk_buf = ""

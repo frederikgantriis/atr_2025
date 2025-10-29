@@ -1,0 +1,80 @@
+# Default/Baseline
+
+Experiment_1:
+   Natural: 5
+   Humanlike: 4
+   Conscious: 4
+   Lifelike: 4
+   Moving: 5
+   Alive: 4
+   Lively: 4
+   Organic: 4
+   Lifelike: 5
+   Interactive: 4
+   Responsive: 5
+   Like: 4
+   Friendly: 5
+   Kind: 5
+   Pleasant: 5
+   Nice: 5
+   Competent: 4
+   Knowledge: 4
+   Responsible: 5
+   Intelligent: 4
+   Sensible: 5
+   Relaxed: 4
+   Agitated: 4
+   Surprised: 4
+
+Experiment_2:
+  Natural: 2
+  Humanlike: 2
+  Conscious: 2
+  Lifelike: 2
+  Moving: 2
+  Alive: 2
+  Lively: 2
+  Organic: 2
+  Lifelike: 2
+  Interactive: 2
+  Responsive: 3
+  Like: 4
+  Friendly: 4
+  Kind: 4
+  Pleasant: 4
+  Nice: 4
+  Competent: 3
+  Knowledge: 4
+  Responsible: 4
+  Intelligent: 4
+  Sensible: 4
+  Relaxed: 4
+  Agitated: 2
+  Surprised: 2
+
+Experiment_3:
+   Natural: 4
+   Humanlike: 3
+   Conscious: 2
+   Lifelike: 1
+   Moving: 2
+   Alive: 3
+   Lively: 4
+   Organic: 3
+   Lifelike: 2
+   Interactive: 4
+   Responsive: 5
+   Like: 3
+   Friendly: 5
+   Kind: 5
+   Pleasant: 5
+   Nice: 5
+   Competent: 4
+   Knowledge: 3
+   Responsible: 3
+   Intelligent: 1
+   Sensible: 3
+   Relaxed: 5
+   Agitated: 1
+   Surprised: 4
+

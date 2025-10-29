@@ -1,0 +1,79 @@
+# Our own robot
+
+Experiment_1:
+  Natural: 3
+  Humanlike: 4 
+  Conscious: 4
+  Lifelike: 3
+  Moving: 2
+  Alive: 4
+  Lively: 2
+  Organic: 3
+  Lifelike: 3
+  Interactive: 4
+  Responsive: 3
+  Like: 5
+  Friendly: 4
+  Kind: 5
+  Pleasant: 5
+  Nice: 5
+  Competent: 4
+  Knowledge: 4
+  Responsible: 3
+  Intelligent: 4
+  Sensible: 3
+  Relaxed: 3
+  Agitated: 2
+  Surprised: 3
+
+Experiment_2:
+  Natural: 3
+  Humanlike: 2 
+  Conscious: 3
+  Lifelike: 2
+  Moving: 1
+  Alive: 2
+  Lively: 2
+  Organic: 2
+  Lifelike: 1
+  Interactive: 2
+  Responsive: 2
+  Like: 3
+  Friendly: 5
+  Kind: 4
+  Pleasant: 4
+  Nice: 4
+  Competent: 4
+  Knowledge: 4
+  Responsible: 4
+  Intelligent: 4
+  Sensible: 3
+  Relaxed: 4
+  Agitated: 2
+  Surprised: 2
+
+Experiment_3:
+  Natural: 1
+  Humanlike: 1 
+  Conscious: 1
+  Lifelike: 1
+  Moving: 2
+  Alive: 3
+  Lively: 3
+  Organic: 2
+  Lifelike: 2
+  Interactive: 3
+  Responsive: 2
+  Like: 2
+  Friendly: 2
+  Kind: 2
+  Pleasant: 3
+  Nice: 3
+  Competent: 1
+  Knowledge: 2
+  Responsible: 3
+  Intelligent: 1
+  Sensible: 2
+  Relaxed: 3
+  Agitated: 2
+  Surprised: 3

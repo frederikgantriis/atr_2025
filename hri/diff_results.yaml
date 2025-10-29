@@ -1,0 +1,27 @@
+!!python/object/apply:collections.defaultdict
+args:
+- !!python/name:builtins.int ''
+dictitems:
+  Agitated: -1
+  Alive: 0
+  Competent: -2
+  Conscious: 0
+  Friendly: -3
+  Humanlike: -2
+  Intelligent: 0
+  Interactive: -1
+  Kind: -3
+  Knowledge: -1
+  Lifelike: -3
+  Like: -1
+  Lively: -3
+  Moving: -4
+  Natural: -4
+  Nice: -2
+  Organic: -2
+  Pleasant: -2
+  Relaxed: -3
+  Responsible: -2
+  Responsive: -6
+  Sensible: -4
+  Surprised: -2

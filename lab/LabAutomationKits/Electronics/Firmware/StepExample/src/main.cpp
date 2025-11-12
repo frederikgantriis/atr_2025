@@ -6,9 +6,6 @@
 
 SfeAS7343ArdI2C mySensor;
 
-uint16_t myData[ksfAS7343NumChannels];
-
-
 CmdMessenger cmdMessenger(Serial, ',', ';', '/');
 
 // This is the list of recognized commands. These can be commands that can either be sent or received.
@@ -20,11 +17,13 @@ void OnGetState();
 void OnGetLastStep();
 void OnReceiveStep();
 void OnReceiveStop();
+void OnGetSensorData();
 
 void returnState();
 void returnLastStep();
 void receiveStep();
 void receiveStop();
+void returnSensorData();
 
 enum
 {
@@ -39,6 +38,8 @@ enum
   kStep,              // Command to receive a step (pump state + time), should always contain the full state of the pumps
   kStop,              // Command to stop all pumps
   kStepDone,          // Command to signal a step done
+  kGetSensorData,     // Command to get sensor data
+  kGetSensorDataResult // Command to send sensor data
 
 };
 
@@ -53,6 +54,7 @@ void attachCommandCallbacks()
   cmdMessenger.attach(kGetLastStep, OnGetLastStep);
   cmdMessenger.attach(kStep, OnReceiveStep);
   cmdMessenger.attach(kStop, OnReceiveStop);
+  cmdMessenger.attach(kGetSensorData, OnGetSensorData);
 }
 
 // ------------------  C A L L B A C K S -----------------------
@@ -73,6 +75,11 @@ void OnWatchdogRequest()
 void OnArduinoReady()
 {
   cmdMessenger.sendCmd(kAcknowledge, "Arduino ready");
+}
+
+void OnGetSensorData()
+{
+  returnSensorData();
 }
 
 void OnGetState()
@@ -102,7 +109,48 @@ void setup() {
 
   Wire.begin();
 
-  mySensor.begin();
+ //  mySensor.begin();
+
+  // Initialize sensor and run default setup.
+  if (mySensor.begin() == false)
+  {
+      Serial.println("Sensor failed to begin. Please check your wiring!");
+      Serial.println("Halting...");
+      while (1)
+          ;
+  }
+
+  Serial.println("Sensor began.");
+
+  // Power on the device
+  if (mySensor.powerOn() == false)
+  {
+      Serial.println("Failed to power on the device.");
+      Serial.println("Halting...");
+      while (1)
+          ;
+  }
+  Serial.println("Device powered on.");
+
+  // Set the AutoSmux to output all 18 channels
+  if (mySensor.setAutoSmux(AUTOSMUX_18_CHANNELS) == false)
+  {
+      Serial.println("Failed to set AutoSmux.");
+      Serial.println("Halting...");
+      while (1)
+          ;
+  }
+  Serial.println("AutoSmux set to 18 channels.");
+
+  // Enable Spectral Measurement
+  if (mySensor.enableSpectralMeasurement() == false)
+  {
+      Serial.println("Failed to enable spectral measurement.");
+      Serial.println("Halting...");
+      while (1)
+          ;
+  }
+  Serial.println("Spectral measurement enabled.");
 
   //  Do not print newLine at end of command,
   //  in order to reduce data being sent
@@ -116,6 +164,8 @@ void setup() {
 }
 
 void loop() {
+  mySensor.setLedDrive(0); // Set LED drive to min (0 = 4mA)
+  mySensor.ledOn();
 
   cmdMessenger.feedinSerialData();
   if (currentStep.state)
@@ -123,15 +173,28 @@ void loop() {
     // Serial.println("Entering queue");
     if (!currentStep.done)
     {
-      int channelsRead = mySensor.getData(myData);
-
-      // Print the data from all the channels that were read
-      for (int channel = 0; channel < channelsRead; channel++)
+      if (mySensor.readSpectraDataFromSensor() == false)
       {
-          Serial.print(myData[channel]);
-          Serial.print(",");
+          Serial.println("Failed to read spectral data.");
       }
+
+      mySensor.ledOff();
+
+      Serial.print(mySensor.getBlue());
+      Serial.print(",");
+
+      Serial.print(mySensor.getRed());
+      Serial.print(",");
+
+      Serial.print(mySensor.getGreen());
+      Serial.print(",");
+
+      Serial.print(mySensor.getNIR());
+      Serial.print(",");
+
       Serial.println();
+
+      delay(500);
 
       // Serial.println("Step not done");
       if (millis() - currentStep.stepStartTime >= currentStep.time)
@@ -233,3 +296,23 @@ void receiveStop()
   cmdMessenger.sendCmd(kAcknowledge, "Stopped");
 }
 
+void returnSensorData()
+{
+  // if (mySensor.readSpectraDataFromSensor() == false)
+  // {
+  //     Serial.println("Failed to read spectral data.");
+  //     cmdMessenger.sendCmd(kError, "Failed to read spectral data.");
+  //     return;
+  // }
+  Serial.println("Reading sensor data...");
+  Serial.println("Blue: " + String(mySensor.getBlue()));
+
+  cmdMessenger.sendCmdStart(kGetSensorDataResult);
+
+  cmdMessenger.sendCmdBinArg<uint16_t>(mySensor.getBlue());
+  // cmdMessenger.sendCmdBinArg<uint16_t>(mySensor.getRed());
+  // cmdMessenger.sendCmdBinArg<uint16_t>(mySensor.getGreen());
+  // cmdMessenger.sendCmdBinArg<uint16_t>(mySensor.getNIR());
+
+  cmdMessenger.sendCmdEnd();
+}

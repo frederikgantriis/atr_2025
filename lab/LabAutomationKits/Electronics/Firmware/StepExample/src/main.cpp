@@ -2,6 +2,12 @@
 #include <CmdMessenger.h>
 #include "dataModel.h"
 #include "df4MotorDriver.h"
+#include <SparkFun_AS7343.h>
+
+SfeAS7343ArdI2C mySensor;
+
+uint16_t myData[ksfAS7343NumChannels];
+
 
 CmdMessenger cmdMessenger(Serial, ',', ';', '/');
 
@@ -94,6 +100,10 @@ void setup() {
   Serial.begin(115200);
   setupPumps();
 
+  Wire.begin();
+
+  mySensor.begin();
+
   //  Do not print newLine at end of command,
   //  in order to reduce data being sent
   cmdMessenger.printLfCr(false);
@@ -113,6 +123,16 @@ void loop() {
     // Serial.println("Entering queue");
     if (!currentStep.done)
     {
+      int channelsRead = mySensor.getData(myData);
+
+      // Print the data from all the channels that were read
+      for (int channel = 0; channel < channelsRead; channel++)
+      {
+          Serial.print(myData[channel]);
+          Serial.print(",");
+      }
+      Serial.println();
+
       // Serial.println("Step not done");
       if (millis() - currentStep.stepStartTime >= currentStep.time)
       {
